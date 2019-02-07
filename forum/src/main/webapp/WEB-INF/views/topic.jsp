@@ -65,8 +65,8 @@
 						<button class="btn btn-sm btn-default p-2" id="prev_btn">&gt</button>
 					</td>
 					<td colspan="2" class="text-right">
-						<button class="btn btn-sm btn-default" id="edit_btn" hidden>수정</button>
-						<button class="btn btn-sm btn-default" id="delete_btn" hidden>삭제</button>
+						<button class="btn btn-sm btn-default" id="edit_btn" onClick="location.href='/edit/${topic.topic_id}'">수정</button>
+						<button class="btn btn-sm btn-default" id="delete_btn" onClick="location.href='/delete/${topic.topic_id}'">삭제</button>
 						<button class="btn btn-sm btn-default" onclick="location.href = '/main'">글목록</button>
 					</td>
 				</tr>
@@ -92,10 +92,6 @@
 	<!-- /JavaScript CDN LIST ===================================== -->
 	<script src="js/jquery.twbsPagination.min.js"></script>
 	<script type="text/javascript">
-		//CREATE => check login state
-		$("#create_btn").click(function() {
-			location.href = "/new";
-		});
 	</script>
 	<!-- ========================================================== -->
 </body>

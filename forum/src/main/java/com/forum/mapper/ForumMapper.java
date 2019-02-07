@@ -19,4 +19,10 @@ public interface ForumMapper {
 	//새글 (추가)
 	public int forumInsert(ForumVO forum) throws Exception;
 	
+	//글 수정
+	public int forumUpdate(ForumVO forum) throws Exception;
+	
+	//글 삭제
+	public int forumDelete(int topic_id) throws Exception;
+	
 }

@@ -56,4 +56,34 @@ public class ForumController {
 		return "redirect:/main";
 	}
 	
+	//EDIT 게시글 수정 화면
+	@RequestMapping("/edit/{topic_id}")
+	private String edit_topic(@PathVariable int topic_id, Model model) throws Exception {
+		model.addAttribute("topic",mForumService.forumTopicService(topic_id));
+		
+		return "edit";
+	}
+	
+	//UPDATE 게시글 수정 작업
+	@RequestMapping("/update")
+	private String update(HttpServletRequest request) throws Exception {
+		ForumVO forum = new ForumVO();
+		
+		forum.setTopic_id(Integer.parseInt(request.getParameter("topic_id")));
+		forum.setCategory(request.getParameter("category"));
+		forum.setTopic(request.getParameter("topic"));
+		forum.setDetail(request.getParameter("detail"));
+		
+		mForumService.forumUpdateService(forum);
+		
+		return "redirect:/main";
+	}
+	
+	//DELETE 게시글 삭제 작업 (GET으로 게시글 번호)
+	@RequestMapping("/delete/{topic_id}")
+	private String topicDelete(@PathVariable int topic_id, Model model) throws Exception{
+		mForumService.forumDeleteService(topic_id);
+		return "redirect:/main";
+	}
+	
 }

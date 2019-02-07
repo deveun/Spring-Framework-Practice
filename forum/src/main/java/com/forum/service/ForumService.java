@@ -29,5 +29,15 @@ public class ForumService {
 	public int forumInsertService(ForumVO forum) throws Exception{
 		return mForumMapper.forumInsert(forum);
 	}
+	
+	//글 수정
+	public int forumUpdateService(ForumVO forum) throws Exception {
+		return mForumMapper.forumUpdate(forum);
+	}
+	
+	//글 삭제
+	public int forumDeleteService(int topic_id) throws Exception{
+		return mForumMapper.forumDelete(topic_id);
+	}
 
 }

@@ -25,5 +25,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO forum (category, topic, detail, user_id, email, datetime)
 		VALUES(#{category}, #{topic}, #{detail}, #{user_id}, #{email}, now())
 	</insert>
+	
+	<!-- 글 수정 -->
+	<update id="forumUpdate" parameterType="com.forum.domain.ForumVO">
+		UPDATE forum SET category=#{category}, topic=#{topic}, detail=#{detail} 
+		WHERE topic_id=#{topic_id}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="forumDelete" parameterType="int">
+	DELETE FROM forum WHERE topic_id = #{topic_id}
+	</delete>
 
 </mapper>

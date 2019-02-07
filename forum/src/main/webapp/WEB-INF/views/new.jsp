@@ -25,6 +25,8 @@
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
 	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	crossorigin="anonymous">
+<!-- CKeditor ============================================== -->
+<script src="/ckeditor/ckeditor.js"></script>
 <!-- Jquery 3.2.1 ============================================= -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- DAUM address API ========================================= -->
@@ -118,10 +120,9 @@
 	<!-- /JavaScript CDN LIST ===================================== -->
 	<script src="js/jquery.twbsPagination.min.js"></script>
 	<script type="text/javascript">
-		//CREATE => check login state
-		$("#create_btn").click(function() {
-			location.href = "/new";
-		});
+		// Replace the <textarea id="editor1"> with a CKEditor
+		// instance, using default configuration.
+		CKEDITOR.replace('ckeditor');
 	</script>
 	<!-- ========================================================== -->
 </body>
