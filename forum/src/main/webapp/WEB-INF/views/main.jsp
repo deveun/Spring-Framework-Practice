@@ -127,7 +127,7 @@
 	<script src="js/jquery.twbsPagination.min.js"></script>
 	<script type="text/javascript">
 		//nav item active
-		var s_category = ${s_category};
+		var s_category = '${s_category}';
 		if (s_category!='') {
 			$('.navbar-nav').find('li.active').removeClass('active');
 			$(s_category).parent('li').addClass('active');

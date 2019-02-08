@@ -49,9 +49,11 @@
 				<tr>
 					<td width="10%" class="border-bottom border-dark d">Ã·ºÎÆÄÀÏ:</td>
 					<td colspan="3">
-						<a class="file_info" href="" download="">
-							<i class="far fa-save"></i> &nbsp;
-						</a><br>
+						<c:forEach var="files" items="${files}">
+							<a class="file_info" href="${files.file_dir} }" download="${files.file_name}.${files.file_type}">
+							<i class="far fa-save"></i> &nbsp;${files.file_name}.${files.file_type}
+							</a><br>
+						</c:forEach>
 					</td>
 				</tr>
 			</thead>

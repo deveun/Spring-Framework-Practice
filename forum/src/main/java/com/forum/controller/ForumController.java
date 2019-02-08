@@ -1,18 +1,26 @@
 package com.forum.controller;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.forum.domain.ForumVO;
+import com.forum.domain.Upload_fileVO;
+import com.forum.service.FileService;
 import com.forum.service.ForumService;
 
 @Controller
@@ -21,6 +29,9 @@ public class ForumController {
 	
 	@Resource(name="com.forum.service.ForumService")
 	ForumService mForumService;
+	
+	@Resource(name="com.forum.service.FileService")
+	FileService mFileService;
 	
 	//MAIN 게시판 목록 화면
 	@RequestMapping("/main")
@@ -66,29 +77,73 @@ public class ForumController {
 	@RequestMapping("/topic/{topic_id}")
 	private String topicDetail(@PathVariable int topic_id, Model model) throws Exception{
 		model.addAttribute("topic",mForumService.forumTopicService(topic_id));
+		model.addAttribute("files",mFileService.fileDetailService(topic_id));
 		
 		return "topic";
 	}
 	
 	//NEW 게시글 작성 화면
 	@RequestMapping("/new")
-	private String new_topic() {
+	private String new_topic() throws Exception {
 		return "new";
 	}
 	
 	//INSERT 게시글 추가 작업 (NEW VIEW에서 POST로 Parameter가져옴)
+	//MultipartFile Upload
 	@RequestMapping("/insert")
-	private String insert_topic(HttpServletRequest request) throws Exception{
+	private String insert_topic(HttpServletRequest request, @RequestPart MultipartFile files) throws Exception{
+		
+		request.setCharacterEncoding("EUC-KR");
+		//System.out.println(request.getParameter("category"));
+		//System.out.println(request.getParameter("topic"));
+		//Set forum vo
 		ForumVO forum = new ForumVO();
 		
 		forum.setCategory(request.getParameter("category"));
 		forum.setTopic(request.getParameter("topic"));
 		forum.setUser_id(request.getParameter("user_id"));
 		forum.setEmail(request.getParameter("email"));
-		//forum.setFile(request.getParameter("file"));
 		forum.setDetail(request.getParameter("detail"));
 		
-		mForumService.forumInsertService(forum);
+		//Set upload_file vo
+		Upload_fileVO upload_file = new Upload_fileVO();
+		
+		////File Info
+		//real file name + extension
+		String file_FullName = files.getOriginalFilename();
+		//real file name (without extension)
+		String file_BaseName = FilenameUtils.getBaseName(file_FullName);
+		//file Extension
+		String file_Extension = FilenameUtils.getExtension(file_FullName).toLowerCase();
+		File saveFile;
+		//save file full name (path + name + extension)
+		String save_FullName;
+		//String fileUrl = "C:/Users/KICPC/Desktop/eclipse-workspace/forum/src/main/webapp/WEB-INF/uploads/";
+		String rootUrl = request.getSession().getServletContext().getRealPath("/");
+		String fileUrl = rootUrl+"/WEB-INF/uploads/";
+		
+		//Date->String
+		Date date = new Date();
+		SimpleDateFormat dateformat = new SimpleDateFormat("yyMMddHHmmss");
+		String str_date = dateformat.format(date);
+		
+		do {
+			save_FullName = fileUrl + str_date + "." + file_Extension;
+			saveFile = new File(save_FullName);
+		} while (saveFile.exists());
+		
+		saveFile.getParentFile().mkdirs();
+		files.transferTo(saveFile);
+		
+		upload_file.setFile_name(file_BaseName);
+		upload_file.setFile_type(file_Extension);
+		upload_file.setFile_dir(save_FullName);
+		
+		upload_file.setTopic_id(mForumService.forumInsertService(forum));
+		//첨부파일이 존재할 때만 INSERT
+		if(!file_FullName.equals("")) {
+		mFileService.fileInsertService(upload_file); 
+		}
 		
 		return "redirect:/main";
 	}
@@ -122,5 +177,5 @@ public class ForumController {
 		mForumService.forumDeleteService(topic_id);
 		return "redirect:/main";
 	}
-	
+
 }

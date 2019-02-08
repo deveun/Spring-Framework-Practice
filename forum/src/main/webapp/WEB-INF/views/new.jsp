@@ -39,10 +39,8 @@
 <body>
 	<div class="container white p-1">
 		<table class="table w-8 table-sm table-borderless mb-0">
-			<!-- action= ....$_SERVER[PHP-SELF]... => Can be hacked. -->
-			<!-- !!! Must use htemlspecialchars !!! -->
 			<!-- enctype="multipart/form-data" ==> File Upload -->
-			<form id="f1" name="f1" method="post" action="/insert">
+			<form enctype="multipart/form-data" id="f1" name="f1" method="post" action="/insert">
 				<thead>
 					<tr>
 						<td class="text-center" colspan="3"><b>새 글 작성하기</b></td>
@@ -63,27 +61,23 @@
 					<tr>
 						<td class="text-right"><b>제목</b></td>
 						<td>:</td>
-						<td><input class="form-control form-control-sm" name="topic"
-							type="text" id="topic" autocomplete="off" required /></td>
+						<td><input class="form-control form-control-sm" name="topic" type="text" id="topic" autocomplete="off" required /></td>
 					</tr>
 					<tr>
 						<td class="text-right"><b>작성자</b></td>
 						<td>:</td>
-						<td><input class="form-control form-control-sm"
-							name="user_id" value="id1"
-							readonly /></td>
+						<td><input class="form-control form-control-sm"	name="user_id" value="id1" readonly /></td>
 					</tr>
 					<tr>
 						<td class="text-right"><b>이메일</b></td>
 						<td>:</td>
-						<td><input class="form-control form-control-sm" name="email"
-							type="text" id="email" autocomplete="off" required /></td>
+						<td><input class="form-control form-control-sm" name="email" type="text" id="email" autocomplete="off" required /></td>
 					</tr>
-					<!-- <tr>
+					<tr>
 						<td class="text-right"><b>파일 첨부</b></td>
 						<td>:</td>
-						<td><input class="add_file" name="file" type="file" multiple /></td>
-					</tr> -->
+						<td><input class="add_file" name="files" type="file" multiple /></td>
+					</tr>
 					<tr>
 						<td class="text-right d"><b>내용</b></td>
 						<td class="d">:</td>

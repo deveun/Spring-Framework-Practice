@@ -43,6 +43,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES(#{category}, #{topic}, #{detail}, #{user_id}, #{email}, now())
 	</insert>
 	
+	<!-- 새로운 글 추가시, 마지막 id값 -->
+	<select id="forumNewid" resultType="int">
+		SELECT topic_id FROM forum ORDER BY topic_id DESC LIMIT 1
+	</select>
+	
 	<!-- 글 수정 -->
 	<update id="forumUpdate" parameterType="com.forum.domain.ForumVO">
 		UPDATE forum SET category=#{category}, topic=#{topic}, detail=#{detail} 

@@ -28,6 +28,8 @@ public interface ForumMapper {
 	
 	//새글 (추가)
 	public int forumInsert(ForumVO forum) throws Exception;
+	//새글 추가시 마지막 id값 리턴
+	public int forumNewid() throws Exception;
 	
 	//글 수정
 	public int forumUpdate(ForumVO forum) throws Exception;

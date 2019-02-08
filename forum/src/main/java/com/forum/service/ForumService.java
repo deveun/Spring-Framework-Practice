@@ -40,9 +40,10 @@ public class ForumService {
 		return mForumMapper.forumTopic(topic_id);
 	}
 
-	// 글 추가
+	// 글 추가 (새로운 id 값을 리턴)
 	public int forumInsertService(ForumVO forum) throws Exception {
-		return mForumMapper.forumInsert(forum);
+		mForumMapper.forumInsert(forum);
+		return mForumMapper.forumNewid();
 	}
 
 	// 글 수정
