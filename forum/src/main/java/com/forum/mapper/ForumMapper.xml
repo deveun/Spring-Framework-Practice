@@ -15,6 +15,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM forum ORDER BY topic_id DESC
 	</select>
 	
+	<!-- 카테고리 글 리스트 -->
+	<select id="forumCategoryList" parameterType="String" resultType="com.forum.domain.ForumVO">
+		SELECT * FROM forum WHERE category = #{category} ORDER BY topic_id DESC
+	</select>
+	
 	<!-- 선택 글 -->
 	<select id="forumTopic" resultType="com.forum.domain.ForumVO">
 		SELECT * FROM forum WHERE topic_id = #{topic_id}

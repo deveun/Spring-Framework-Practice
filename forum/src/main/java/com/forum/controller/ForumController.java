@@ -7,11 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.forum.domain.ForumVO;
 import com.forum.service.ForumService;
 
 @Controller
+@SessionAttributes("s_category")
 public class ForumController {
 	
 	@Resource(name="com.forum.service.ForumService")
@@ -22,6 +24,16 @@ public class ForumController {
 	private String main(Model model) throws Exception {
 		
 		model.addAttribute("list", mForumService.forumListService());
+		model.addAttribute("s_category","");
+		return "main";
+	}
+	
+	//CATEGORY 게시판 목록 화면
+	@RequestMapping("/main/{category}")
+	private String main_category(@PathVariable String category, Model model) throws Exception {
+		
+		model.addAttribute("list", mForumService.forumCategoryListService(category));
+		model.addAttribute("s_category",category);
 		return "main";
 	}
 	

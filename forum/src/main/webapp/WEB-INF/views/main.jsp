@@ -35,6 +35,33 @@
 <!-- ========================================================== -->
 <!-- BODY  ==================================================== -->
 <body>
+
+	<!-- NAVBAR -->
+	<div class="container mb-3 px-0">
+		<nav class="navbar navbar-expand-sm navbar-dark default-color">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link" id="all"
+					href="/main">전체보기</a></li>
+				<li class="nav-item"><a class="nav-link" id="news"
+					href="/main/news">뉴스</a></li>
+				<li class="nav-item"><a class="nav-link" id="movie"
+					href="/main/movie">영화</a></li>
+				<li class="nav-item"><a class="nav-link" id="music"
+					href="/main/music">뮤직</a></li>
+				<li class="nav-item"><a class="nav-link" id="book"
+					href="/main/book">책</a></li>
+			</ul>
+		</div>
+		</nav>
+	</div>
+	${s_category}
+	<!-- BOARD -->
 	<div class="container white p-1">
 		<table class="main_table table table-sm table-hover text-center mb-0">
 			<thead>
@@ -100,6 +127,12 @@
 	<!-- /JavaScript CDN LIST ===================================== -->
 	<script src="js/jquery.twbsPagination.min.js"></script>
 	<script type="text/javascript">
+		//nav item active
+		var s_category = ${s_category};
+		if (s_category!='') {
+			$('.navbar-nav').find('li.active').removeClass('active');
+			$(s_category).parent('li').addClass('active');
+		}
 		//CREATE => check login state
 		$("#create_btn").click(function() {
 			location.href = "/new";

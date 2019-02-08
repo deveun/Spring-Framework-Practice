@@ -20,6 +20,11 @@ public class ForumService {
 		return mForumMapper.forumList();
 	}
 	
+	//카테고리 글 목록
+	public List<ForumVO> forumCategoryListService(String category) throws Exception {
+		return mForumMapper.forumCategoryList(category);
+	}
+	
 	//글 상세
 	public ForumVO forumTopicService(int topic_id) throws Exception{
 		return mForumMapper.forumTopic(topic_id);

@@ -13,6 +13,9 @@ public interface ForumMapper {
 	//목록
 	public List<ForumVO> forumList() throws Exception;
 	
+	//카테고리 목록
+	public List<ForumVO> forumCategoryList(String category) throws Exception; 
+	
 	//상세
 	public ForumVO forumTopic(int topic_id) throws Exception;
 	
