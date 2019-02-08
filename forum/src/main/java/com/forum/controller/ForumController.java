@@ -1,5 +1,8 @@
 package com.forum.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,6 +37,28 @@ public class ForumController {
 		
 		model.addAttribute("list", mForumService.forumCategoryListService(category));
 		model.addAttribute("s_category",category);
+		return "main";
+	}
+	
+	//SEARCH 게시판 목록 화면
+	@RequestMapping("/main/search")
+	private String main_search(HttpServletRequest request, Model model) throws Exception{
+		String type = request.getParameter("type");
+		String search = request.getParameter("search");
+		String category = request.getParameter("category");
+		
+		Map<String, String> search_map = new HashMap<String, String>();
+		search_map.put("category", category);
+		search_map.put("type", type);
+		search_map.put("search", search);
+		
+		//ALL Category Search
+		if(category.equals(""))	{
+			model.addAttribute("list",mForumService.forumSearchListService1(search_map));	}
+		//SELECTED Category Search
+		else	{
+			model.addAttribute("list",mForumService.forumSearchListService2(search_map));	}
+		
 		return "main";
 	}
 	

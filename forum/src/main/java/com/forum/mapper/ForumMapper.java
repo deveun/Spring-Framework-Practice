@@ -1,6 +1,7 @@
 package com.forum.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,12 @@ public interface ForumMapper {
 	
 	//카테고리 목록
 	public List<ForumVO> forumCategoryList(String category) throws Exception; 
+	
+	//검색 목록1 (ALL CATEGORY)
+	public List<ForumVO> forumSearchList1(Map<String, String> search_map) throws Exception;
+	
+	//검색 목록2 (SELECTED CATEGORY)
+	public List<ForumVO> forumSearchList2(Map<String, String> search_map) throws Exception;
 	
 	//상세
 	public ForumVO forumTopic(int topic_id) throws Exception;

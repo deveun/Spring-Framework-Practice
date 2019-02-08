@@ -60,7 +60,6 @@
 		</div>
 		</nav>
 	</div>
-	${s_category}
 	<!-- BOARD -->
 	<div class="container white p-1">
 		<table class="main_table table table-sm table-hover text-center mb-0">
@@ -86,11 +85,11 @@
 			</tbody>
 			<tfoot>
 				<!-- Search -->
-				<form id="f1" name="f1" method="post" action="">
+				<form id="f1" name="f1" method="post" action="/main/search">
 					<input class="d-none" name="category" type="text" id="category"
-						value="" />
+						value="${s_category}" />
 					<tr>
-						<td><select name="s_type"
+						<td><select name="type"
 							class="form-control form-control-sm">
 								<option value="topic">제목</option>
 								<option value="user_id">작성자</option>

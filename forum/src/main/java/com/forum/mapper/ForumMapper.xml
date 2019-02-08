@@ -20,6 +20,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM forum WHERE category = #{category} ORDER BY topic_id DESC
 	</select>
 	
+	<!-- 검색 글 리스트1 ALL CATEGORY -->
+	<!-- Field 값으로 변수가 쓰일 때에는 $ / Parameter가 여러개여서 Map형태로 받음.-->
+	<select id="forumSearchList1" parameterType="Map" resultType="com.forum.domain.ForumVO">
+	<bind name="search" value="'%'+search+'%'"/>
+		SELECT * FROM forum WHERE ${type} LIKE #{search} ORDER BY topic_id DESC
+	</select>
+	<!-- 검색 글 리스트2 SELECTED CATEGORY -->
+	<select id="forumSearchList2" parameterType="Map" resultType="com.forum.domain.ForumVO">
+	<bind name="search" value="'%'+search+'%'"/>
+		SELECT * FROM forum WHERE category = #{category} AND ${type} LIKE #{search} ORDER BY topic_id DESC
+	</select>
+	
 	<!-- 선택 글 -->
 	<select id="forumTopic" resultType="com.forum.domain.ForumVO">
 		SELECT * FROM forum WHERE topic_id = #{topic_id}
