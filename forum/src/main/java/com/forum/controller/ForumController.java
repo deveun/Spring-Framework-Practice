@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -191,6 +192,28 @@ public class ForumController {
 	//DELETE 게시글 삭제 작업 (GET으로 게시글 번호)
 	@RequestMapping("/delete/{topic_id}")
 	private String topicDelete(@PathVariable int topic_id, Model model) throws Exception{
+		
+		//Directory 내의 파일 삭제
+		List<Upload_fileVO> upload_files = mFileService.fileDetailService(topic_id);
+		for(int i=0; i<upload_files.size(); i++)
+		{
+			Upload_fileVO file_dto = upload_files.get(i);
+			File file = new File(file_dto.getFile_dir());
+			
+			if( file.exists() ){
+	            if(file.delete()){
+	                System.out.println("파일삭제 성공");
+	            }else{
+	                System.out.println("파일삭제 실패");
+	            }
+	        }else{
+	            System.out.println("파일이 존재하지 않습니다.");
+	        }
+		}		
+		
+		//Upload_file DB에서 해당 topic_id값을 가진 정보 삭제
+		mFileService.fileDeleteService(topic_id);
+		//Forum DB에서 해당 topic_id값을 가진 정보 삭제
 		mForumService.forumDeleteService(topic_id);
 		return "redirect:/main";
 	}

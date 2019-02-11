@@ -20,6 +20,11 @@ public class FileService {
 		return mFileMapper.fileInsert(upload_file);
 	}
 	
+	//파일 삭제
+	public void fileDeleteService(int topic_id) throws Exception {
+		mFileMapper.fileDelete(topic_id);
+	}
+	
 	//파일 정보
 	public List<Upload_fileVO> fileDetailService(int topic_id) throws Exception {
 		return mFileMapper.fileDetailList(topic_id);

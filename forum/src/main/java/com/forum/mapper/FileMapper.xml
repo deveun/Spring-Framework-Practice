@@ -12,6 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		VALUES(#{topic_id}, #{file_name}, #{file_type}, #{file_dir})
 	</insert>
 	
+	<!-- 파일 삭제 -->
+	<delete id="fileDelete" parameterType="int">
+	DELETE FROM upload_file WHERE topic_id = #{topic_id}
+	</delete>
+	
+	
 	<!-- 선택글 첨부 파일 리스트 -->
 	<select id="fileDetailList" parameterType="int" resultType="com.forum.domain.Upload_fileVO">
 		SELECT * FROM upload_file WHERE topic_id = #{topic_id}
