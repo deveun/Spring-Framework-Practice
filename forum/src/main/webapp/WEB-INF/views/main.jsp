@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- Bootstrap4.1.3 css ================================== -->
@@ -47,15 +48,15 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link" id="all"
-					href="/main">ÀüÃ¼º¸±â</a></li>
+					href="/main">ì „ì²´ë³´ê¸°</a></li>
 				<li class="nav-item"><a class="nav-link" id="news"
-					href="/main/news">´º½º</a></li>
+					href="/main/news">ë‰´ìŠ¤</a></li>
 				<li class="nav-item"><a class="nav-link" id="movie"
-					href="/main/movie">¿µÈ­</a></li>
+					href="/main/movie">ì˜í™”</a></li>
 				<li class="nav-item"><a class="nav-link" id="music"
-					href="/main/music">¹ÂÁ÷</a></li>
+					href="/main/music">ë®¤ì§</a></li>
 				<li class="nav-item"><a class="nav-link" id="book"
-					href="/main/book">Ã¥</a></li>
+					href="/main/book">ì±…</a></li>
 			</ul>
 		</div>
 		</nav>
@@ -65,23 +66,26 @@
 		<table class="main_table table table-sm table-hover text-center mb-0">
 			<thead>
 				<tr>
-					<td width="10%"><strong>¹øÈ£</strong></td>
-					<td><strong>±ÛÁ¦¸ñ</strong></td>
-					<td><strong>ÀÛ¼ºÀÚ</strong></td>
-					<td width="10%"><strong>Á¶È¸¼ö</strong></td>
-					<td width="15%"><strong>ÀÛ¼ºÀÏ</strong></td>
+					<td width="10%"><strong>ë²ˆí˜¸</strong></td>
+					<td><strong>ê¸€ì œëª©</strong></td>
+					<td><strong>ì‘ì„±ì</strong></td>
+					<td width="10%"><strong>ì¡°íšŒìˆ˜</strong></td>
+					<td width="15%"><strong>ì‘ì„±ì¼</strong></td>
 				</tr>
 			</thead>
 			<tbody id="table_body">
+				<c:set var="num" value="1"/>
 				<c:forEach var="list" items="${list}">
-					<tr onClick="location.href='/topic/${list.topic_id}'">
-						<td>${list.topic_id}</td>
+					<tr onClick="listClick('${list.topic_id}', '${num}')">
+						<td>${num}</td>
 						<td>${list.topic}</td>
 						<td>${list.user_id}</td>
 						<td>${list.view}</td>
 						<td>${list.datetime}</td>
 					</tr>
+				<c:set var="num" value="${num + 1}"/>
 				</c:forEach>
+				<c:remove var="num"/>
 			</tbody>
 			<tfoot>
 				<!-- Search -->
@@ -91,22 +95,24 @@
 					<tr>
 						<td><select name="type"
 							class="form-control form-control-sm">
-								<option value="topic">Á¦¸ñ</option>
-								<option value="user_id">ÀÛ¼ºÀÚ</option>
+								<option value="topic">ì œëª©</option>
+								<option value="user_id">ì‘ì„±ì</option>
 						</select></td>
 						<td width="25%"><input class="form-control form-control-sm"
 							name="search" type="text" autocomplete="off" /></td>
 						<td class="text-left">
-							<button class="btn btn-sm btn-default" type="submit">°Ë»ö</button>
+							<button class="btn btn-sm btn-default" type="submit">ê²€ìƒ‰</button>
 						</td>
 						<td class="text-right" colspan="2"><a role="button"
-							class="btn btn-sm btn-default" id="create_btn"><strong>±ÛÀÛ¼º</strong></a>
+							class="btn btn-sm btn-default" id="create_btn"><strong>ê¸€ì‘ì„±</strong></a>
 						</td>
 					</tr>
 				</form>
 			</tfoot>
 		</table>
 		<br>
+		<!-- pagination -->
+		<div><ul id="pagination" class="pagination-sm justify-content-center"></ul></div>
 	</div>
 
 	<!-- ========================================================== -->
@@ -124,18 +130,60 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 	<!-- /JavaScript CDN LIST ===================================== -->
-	<script src="js/jquery.twbsPagination.min.js"></script>
-	<script type="text/javascript">
+	<script src="/js/jquery.twbsPagination.min.js"></script>
+	<script>
+	
+		//list Click Event
+		function listClick(topic_id, num) {
+			location.href='/topic/'+ topic_id + '/' + num;
+		}
+	
 		//nav item active
 		var s_category = '${s_category}';
 		if (s_category!='') {
 			$('.navbar-nav').find('li.active').removeClass('active');
-			$(s_category).parent('li').addClass('active');
+			$('#'+s_category).parent('li').addClass('active');
 		}
 		//CREATE => check login state
 		$("#create_btn").click(function() {
 			location.href = "/new";
 		});
+		
+		//PAGINATION
+		//pages total number (ì´ í˜ì´ì§€ ê°¯ìˆ˜)
+		var tp = Math.ceil(${fn:length(list)}/5);
+		//number of pages that page shows (í™”ë©´ì— ë³´ì—¬ì£¼ëŠ” ìµœëŒ€ í˜ì´ì§€ ìˆ«ì)
+		var vp = 5;
+		//number of table rows that page shows (í•œ í˜ì´ì§€ì— ë‚˜ì˜¤ëŠ” ê²Œì‹œê¸€ ê°¯ìˆ˜)
+		var vt = 5;
+		
+		//Pagination (at least one topic is needed)
+		if(tp>0) {
+			$('#pagination').twbsPagination({
+				totalPages: tp,
+				visiblePages: vp,
+				next: 'Next',
+				prev: 'Prev',
+				onPageClick: function (event, page) {
+        	//fetch content and render here
+        	//first, show all topic
+        	$(".main_table tbody tr").each(function(i) {
+        		$(this).show();
+        	});
+
+        	//second, hide outrange topic
+        	$(".main_table tbody tr").each(function(i) {
+        		if(parseInt($(this).children().eq(0).text()) >page*vt || parseInt($(this).children().eq(0).text()) <=(page-1)*vt)
+        			$(this).hide();
+        	});
+        }
+      });
+		}
+		else {
+			var ins = "<tr><td colspan=5>ë°ì´í„°ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.</td></tr>";
+			$('.table tbody').html(ins);
+		}
+		
 	</script>
 	<!-- ========================================================== -->
 </body>

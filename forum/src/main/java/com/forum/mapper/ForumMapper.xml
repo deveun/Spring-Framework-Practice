@@ -5,11 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.forum.mapper.ForumMapper">
 	
-	<!-- 전체 글 갯수 -->
-	<select id="forumCount" resultType = "int">
-	SELECT COUNT(*) FROM forum
-	</select>
-	
 	<!-- 전체 글 리스트 -->
 	<select id="forumList" resultType="com.forum.domain.ForumVO">
 		SELECT * FROM forum ORDER BY topic_id DESC
@@ -35,6 +30,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 선택 글 -->
 	<select id="forumTopic" resultType="com.forum.domain.ForumVO">
 		SELECT * FROM forum WHERE topic_id = #{topic_id}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="addCount" parameterType="int">
+		UPDATE forum SET view = view+1 WHERE topic_id = #{topic_id}
+	</update>
+	
+	<!-- Mybatis 동적 쿼리!!! IF STATEMENT -->
+	<!--(선택 카테고리별 구분) 이전 글 ID -->
+	<select id="getPrev" parameterType="Map" resultType="int">
+		SELECT topic_id FROM forum WHERE topic_id &lt; #{topic_id} 
+		<if test="category != '' and category != null">
+		AND category = #{category}
+		</if>
+		ORDER BY topic_id DESC LIMIT 1
+	</select>
+	<!--(선택 카테고리별 구분) 다음 글 ID -->
+	<select id="getNext" parameterType="Map" resultType="int">
+		SELECT topic_id FROM forum WHERE topic_id &gt; #{topic_id} 
+		<if test="category != '' and category != null">
+		AND category = #{category}
+		</if>
+		LIMIT 1
+	</select>
+	<!--(선택 카테고리별 구분) 전체 글 갯수 -->
+	<select id="getTotal" parameterType="Map" resultType = "int">
+		SELECT COUNT(*) FROM forum
+		<if test="category != '' and category != null">
+		WHERE category = #{category}
+		</if>
 	</select>
 	
 	<!-- 새로운 글 추가 -->

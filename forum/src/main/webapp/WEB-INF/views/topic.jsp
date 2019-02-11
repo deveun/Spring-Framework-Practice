@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- Bootstrap4.1.3 css ================================== -->
@@ -44,13 +44,13 @@
 					<td class="text-right" width="20%">${topic.datetime}</td>
 				</tr>
 				<tr>
-					<td colspan="4">ÀÛ¼ºÀÚ: ${topic.user_id}</td>
+					<td colspan="4">ì‘ì„±ì: ${topic.user_id}</td>
 				</tr>
 				<tr>
-					<td width="10%" class="border-bottom border-dark d">Ã·ºÎÆÄÀÏ:</td>
+					<td width="10%" class="border-bottom border-dark d">ì²¨ë¶€íŒŒì¼:</td>
 					<td colspan="3">
 						<c:forEach var="files" items="${files}">
-							<a class="file_info" href="${files.file_dir} }" download="${files.file_name}.${files.file_type}">
+							<a class="file_info" href="${files.file_dir}" download="${files.file_name}.${files.file_type}">
 							<i class="far fa-save"></i> &nbsp;${files.file_name}.${files.file_type}
 							</a><br>
 						</c:forEach>
@@ -67,14 +67,17 @@
 						<button class="btn btn-sm btn-default p-2" id="prev_btn">&gt</button>
 					</td>
 					<td colspan="2" class="text-right">
-						<button class="btn btn-sm btn-default" id="edit_btn" onClick="location.href='/edit/${topic.topic_id}'">¼öÁ¤</button>
-						<button class="btn btn-sm btn-default" id="delete_btn" onClick="location.href='/delete/${topic.topic_id}'">»èÁ¦</button>
-						<button class="btn btn-sm btn-default" onclick="location.href = '/main'">±Û¸ñ·Ï</button>
+						<button class="btn btn-sm btn-default" id="edit_btn" onClick="location.href='/edit/${topic.topic_id}'">ìˆ˜ì •</button>
+						<button class="btn btn-sm btn-default" id="delete_btn" onClick="location.href='/delete/${topic.topic_id}'">ì‚­ì œ</button>
+						<button class="btn btn-sm btn-default" onclick="location.href='/main/${s_category}'">ê¸€ëª©ë¡</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<!-- /View Table -->
+	</div>
+	<div class="container p-0 white-text text-right">
+		${info.num} / ${info.total_num}
 	</div>
 
 	<!-- ========================================================== -->
@@ -92,8 +95,25 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 	<!-- /JavaScript CDN LIST ===================================== -->
-	<script src="js/jquery.twbsPagination.min.js"></script>
-	<script type="text/javascript">
+	<script>
+		//button disability
+		if(${info.num} == 1)
+			$("#next_btn").prop('disabled',true);
+		if(${info.num} == ${info.total_num})
+			$("#prev_btn").prop('disabled',true);
+
+		//<<<
+		$("#next_btn").click( function () {
+			location.href="/topic/${info.next_id}/${info.num-1}";
+			return;
+		});
+
+		//>>>
+		$("#prev_btn").click( function () {
+			location.href="/topic/${info.prev_id}/${info.num+1}";
+			return;
+		});
+	
 	</script>
 	<!-- ========================================================== -->
 </body>

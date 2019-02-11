@@ -1,5 +1,6 @@
 package com.forum.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,17 +28,35 @@ public class ForumService {
 	}
 
 	// 검색 글 목록1 (ALL CATEGORY)
-	public List<ForumVO> forumSearchListService1(Map<String, String> search_map) throws Exception {
-		return mForumMapper.forumSearchList1(search_map);
-	}
 	// 검색 글 목록2 (SELECTED CATEGORY)
-	public List<ForumVO> forumSearchListService2(Map<String, String> search_map) throws Exception {
-		return mForumMapper.forumSearchList2(search_map);
+	public List<ForumVO> forumSearchListService(Map<String, String> search_map) throws Exception {
+		if(search_map.get("category").equals("")) {
+			return mForumMapper.forumSearchList1(search_map);
+		}
+		else
+			return mForumMapper.forumSearchList2(search_map);
 	}
 
 	// 글 상세
 	public ForumVO forumTopicService(int topic_id) throws Exception {
 		return mForumMapper.forumTopic(topic_id);
+	}
+	
+	// 조회수 증가
+	public void addCountService(int topic_id) throws Exception {
+		mForumMapper.addCount(topic_id); 
+	}
+	
+	// 이전 글 ID (Category에 따라 구별)
+	// 다음 글 ID (Category에 따라 구별)
+	// 전체 글 갯수 (Category에 따라 구별)
+	public Map<String, Integer> getInfoService(Map<String, String> info_map) throws Exception {
+		Map<String, Integer> info = new HashMap<String, Integer>();
+		info.put("prev_id", mForumMapper.getPrev(info_map));
+		info.put("next_id", mForumMapper.getNext(info_map));
+		info.put("total_num", mForumMapper.getTotal(info_map));
+		
+		return info;
 	}
 
 	// 글 추가 (새로운 id 값을 리턴)

@@ -26,6 +26,15 @@ public interface ForumMapper {
 	//상세
 	public ForumVO forumTopic(int topic_id) throws Exception;
 	
+	//조회수 증가
+	public void addCount(int topic_id) throws Exception;
+	
+	//아래 3가지를 getInfoService에서 관리
+	//이전 글 ID //다음 글 ID //전체 글 갯수
+	public Integer getPrev(Map<String, String> info_map) throws Exception;
+	public Integer getNext(Map<String, String> info_map) throws Exception;
+	public Integer getTotal(Map<String, String> info_map) throws Exception;
+	
 	//새글 (추가)
 	public int forumInsert(ForumVO forum) throws Exception;
 	//새글 추가시 마지막 id값 리턴

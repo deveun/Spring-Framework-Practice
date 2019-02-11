@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- Bootstrap4.1.3 css ================================== -->
@@ -45,7 +45,7 @@
 			<form id="form1" name="form1" method="post" action="/update">
 				<thead>
 					<tr>
-						<td><b>Ä«Å×°í¸®</b></td>
+						<td><b>ì¹´í…Œê³ ë¦¬</b></td>
 						<td>:</td>
 						<td><input hidden name="topic_id" type="text" id="topic_id"
 							value="${topic.topic_id}" /> <select class="custom-select"
@@ -58,21 +58,21 @@
 						<td class="text-right">${topic.datetime}</td>
 					</tr>
 					<tr>
-						<td>Á¦¸ñ</td>
+						<td>ì œëª©</td>
 						<td>:</td>
 						<td><input class="form-control" name="topic" type="text"
 							id="topic" value="${topic.topic}" autocomplete="off" /></td>
 
 					</tr>
 					<tr>
-						<td>ÀÛ¼ºÀÚ</td>
+						<td>ìž‘ì„±ìž</td>
 						<td>:</td>
 						<td><input class="form-control" name="user_id" type="text"
 							id="user_id" value="${topic.user_id}" readonly /></td>
 						<td></td>
 					</tr>
 					<tr>
-						<td class="d">Ã·ºÎÆÄÀÏ</td>
+						<td class="d">ì²¨ë¶€íŒŒì¼</td>
 						<td class="d">:</td>
 						</td>
 						<!-- <td class="d"><input class="add_file" name="file[]"
@@ -81,7 +81,7 @@
 							class="file_info" onClick="deleteFile(this)"
 							id="<?php echo $rows_file['file_id'];?>"> <i
 								class="far fa-save"></i> &nbsp;<?php echo $rows_file['file_name']; ?>
-								..... <small>»èÁ¦</small> <br></a> <?php } ?></td>-->
+								..... <small>ì‚­ì œ</small> <br></a> <?php } ?></td>-->
 					</tr>
 				</thead>
 				<tbody>
@@ -93,12 +93,12 @@
 					<tr>
 						<td colspan="4" class="text-right">
 							<button class="btn btn-sm btn-default" type="submit"
-								name="Submit">È®ÀÎ</button>
+								name="Submit">í™•ì¸</button>
 							<button class="btn btn-sm btn-default" type="button"
 								id="cancel_btn"
-								onClick="location.href= '/topic/${topic.topic_id}'">Ãë¼Ò</button>
+								onClick="location.href= '/topic/${topic.topic_id}'">ì·¨ì†Œ</button>
 							<button class="btn btn-sm btn-default" type="button"
-								onclick="location.href = '/main'">±Û¸ñ·Ï</button>
+								onclick="location.href = '/main'">ê¸€ëª©ë¡</button>
 						</td>
 					</tr>
 				</tbody>

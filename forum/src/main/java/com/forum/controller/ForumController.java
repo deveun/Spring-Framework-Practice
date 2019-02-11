@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -24,6 +25,7 @@ import com.forum.service.FileService;
 import com.forum.service.ForumService;
 
 @Controller
+//세션 등록! (사용시에는 @ModelAttribute)
 @SessionAttributes("s_category")
 public class ForumController {
 	
@@ -64,20 +66,37 @@ public class ForumController {
 		search_map.put("search", search);
 		
 		//ALL Category Search
-		if(category.equals(""))	{
-			model.addAttribute("list",mForumService.forumSearchListService1(search_map));	}
 		//SELECTED Category Search
-		else	{
-			model.addAttribute("list",mForumService.forumSearchListService2(search_map));	}
+		model.addAttribute("list",mForumService.forumSearchListService(search_map));
 		
 		return "main";
 	}
 	
 	//TOPIC 게시글 상세 화면 (GET으로 게시글 번호 가져옴)
-	@RequestMapping("/topic/{topic_id}")
-	private String topicDetail(@PathVariable int topic_id, Model model) throws Exception{
+	@RequestMapping("/topic/{topic_id}/{num}")
+	private String topicDetail(@PathVariable int topic_id, @PathVariable int num, @ModelAttribute("s_category") String s_category, Model model) throws Exception{
+		
+		//(예정) cookie값이 존재하지 않는 경우에만 조회수를 증가시킬 수 있음.
+		mForumService.addCountService(topic_id);
+		
+		//server 작업수행으로 info (MAP) 을 가져오기 위함. === category, topic_id
+		Map<String, String> info_map = new HashMap<String, String>();
+		info_map.put("category", s_category);
+		info_map.put("topic_id", Integer.toString(topic_id));
+		
+		//Map Type 으로 info === prev_id, next_id, total_num 가져오기 
+		//추가로 num
+		Map<String, Integer> info = mForumService.getInfoService(info_map);
+		info.put("num", num); 
+		
+		model.addAttribute("s_category", s_category);
 		model.addAttribute("topic",mForumService.forumTopicService(topic_id));
 		model.addAttribute("files",mFileService.fileDetailService(topic_id));
+		model.addAttribute("info",info);
+		
+		//System.out.println(info.get("prev_id"));
+		//System.out.println(info.get("next_id"));
+		//System.out.println(info.get("total_num"));
 		
 		return "topic";
 	}
@@ -93,9 +112,7 @@ public class ForumController {
 	@RequestMapping("/insert")
 	private String insert_topic(HttpServletRequest request, @RequestPart MultipartFile files) throws Exception{
 		
-		request.setCharacterEncoding("EUC-KR");
-		//System.out.println(request.getParameter("category"));
-		//System.out.println(request.getParameter("topic"));
+		request.setCharacterEncoding("UTF-8");
 		//Set forum vo
 		ForumVO forum = new ForumVO();
 		

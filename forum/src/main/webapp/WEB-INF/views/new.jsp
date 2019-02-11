@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <!-- Bootstrap4.1.3 css ================================== -->
@@ -43,12 +43,12 @@
 			<form enctype="multipart/form-data" id="f1" name="f1" method="post" action="/insert">
 				<thead>
 					<tr>
-						<td class="text-center" colspan="3"><b>»õ ±Û ÀÛ¼ºÇÏ±â</b></td>
+						<td class="text-center" colspan="3"><b>ìƒˆ ê¸€ ìž‘ì„±í•˜ê¸°</b></td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td class="text-right"><b>Ä«Å×°í¸®</b></td>
+						<td class="text-right"><b>ì¹´í…Œê³ ë¦¬</b></td>
 						<td>:</td>
 						<td><select class="browser-default custom-select"
 							name="category" id="category">
@@ -59,27 +59,27 @@
 						</select></td>
 					</tr>
 					<tr>
-						<td class="text-right"><b>Á¦¸ñ</b></td>
+						<td class="text-right"><b>ì œëª©</b></td>
 						<td>:</td>
 						<td><input class="form-control form-control-sm" name="topic" type="text" id="topic" autocomplete="off" required /></td>
 					</tr>
 					<tr>
-						<td class="text-right"><b>ÀÛ¼ºÀÚ</b></td>
+						<td class="text-right"><b>ìž‘ì„±ìž</b></td>
 						<td>:</td>
 						<td><input class="form-control form-control-sm"	name="user_id" value="id1" readonly /></td>
 					</tr>
 					<tr>
-						<td class="text-right"><b>ÀÌ¸ÞÀÏ</b></td>
+						<td class="text-right"><b>ì´ë©”ì¼</b></td>
 						<td>:</td>
 						<td><input class="form-control form-control-sm" name="email" type="text" id="email" autocomplete="off" required /></td>
 					</tr>
 					<tr>
-						<td class="text-right"><b>ÆÄÀÏ Ã·ºÎ</b></td>
+						<td class="text-right"><b>íŒŒì¼ ì²¨ë¶€</b></td>
 						<td>:</td>
 						<td><input class="add_file" name="files" type="file" multiple /></td>
 					</tr>
 					<tr>
-						<td class="text-right d"><b>³»¿ë</b></td>
+						<td class="text-right d"><b>ë‚´ìš©</b></td>
 						<td class="d">:</td>
 						<td><textarea class="form-control" name="detail" rows="3"
 								id="ckeditor"></textarea></td>
@@ -87,9 +87,9 @@
 					<tr>
 						<td colspan="3" class="text-right">
 							<button class="btn btn-default btn-sm" type="submit"
-								name="Submit">È®ÀÎ</button>
+								name="Submit">í™•ì¸</button>
 							<button class="btn btn-default btn-sm" type="reset"
-								onClick="location.href='/main'">Ãë¼Ò</button>
+								onClick="location.href='/main'">ì·¨ì†Œ</button>
 						</td>
 					</tr>
 				</tbody>
