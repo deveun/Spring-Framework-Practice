@@ -69,7 +69,7 @@
 					<td colspan="2" class="text-right">
 						<button class="btn btn-sm btn-default" id="edit_btn" onClick="location.href='/edit/${topic.topic_id}'">수정</button>
 						<button class="btn btn-sm btn-default" id="delete_btn" onClick="location.href='/delete/${topic.topic_id}'">삭제</button>
-						<button class="btn btn-sm btn-default" onclick="location.href='/main/${s_category}'">글목록</button>
+						<button class="btn btn-sm btn-default" onclick="location.href='/main/${session.s_category}'">글목록</button>
 					</td>
 				</tr>
 			</tbody>

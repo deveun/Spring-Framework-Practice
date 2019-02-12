@@ -4,10 +4,10 @@
 <div class="container px-0 d-flex mb-2">
 	<div class="d-table-cell mr-auto align-items-center pt-3">
 		<b class="text-default align-middle">회원등급</b>
-		<span class="badge badge-default"> ${user.s_user_grade} </span>
+		<span class="badge badge-default"> ${session.s_user_grade} </span>
 	</div>
 	<div class="d-table-cell">
-		<b class="text-default align-middle"> ${user.s_user_name}님(${user.s_user_id})</b>
+		<b class="text-default align-middle"> ${session.s_user_name}님(${session.s_user_id})</b>
 		<button class="btn btn-outline-default btn-sm px-2" id="myinfo_btn">
 			<b>내정보</b>
 		</button>

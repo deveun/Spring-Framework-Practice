@@ -66,7 +66,7 @@
 					<tr>
 						<td class="text-right"><b>작성자</b></td>
 						<td>:</td>
-						<td><input class="form-control form-control-sm"	name="user_id" value="id1" readonly /></td>
+						<td><input class="form-control form-control-sm"	name="user_id" value= "${user.s_user_id}" readonly /></td>
 					</tr>
 					<tr>
 						<td class="text-right"><b>이메일</b></td>

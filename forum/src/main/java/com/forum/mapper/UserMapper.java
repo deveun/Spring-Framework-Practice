@@ -12,6 +12,7 @@ public interface UserMapper {
 	//로그인
 	public UsersVO userLogin(Map<String, String> login_map) throws Exception;
 	
-	
+	//회원가입
+	public int userRegister(Map<String, String> reg_map) throws Exception;
 
 }

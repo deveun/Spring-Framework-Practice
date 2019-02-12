@@ -12,5 +12,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND user_pw = password(#{user_pw})
 		LIMIT 1
 	</select>
+	
+	<!-- 회원가입 (회원 정보 추가)-->
+	<insert id="userRegister" parameterType="Map">
+		INSERT INTO users
+		(user_id, user_pw, user_name, post, address, extra_address, detail_address)
+		 VALUES(#{user_id}, password(#{user_pw}), #{user_name}, #{post}, #{address}, #{extra_address}, #{detail_address})
+	</insert>
 
 </mapper>

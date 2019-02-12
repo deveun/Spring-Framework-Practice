@@ -54,21 +54,10 @@ public class ForumController {
 	@RequestMapping("/main")
 	private String main(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
 
-		// login user info MAP
-		// 로그인 기록이 없으면(session이 비어있음) null값을 추가해주고,
-		// session에 정보가 있으면 값을 넣어줌.
-		Map<String, String> user_map = new HashMap<String, String>();
-
-		if (session != null) {
-			user_map.put("s_user_id", session.getS_user_id());
-			user_map.put("s_user_name", session.getS_user_name());
-			user_map.put("s_user_grade", session.getS_user_grade());
-			System.out.println(session.getS_user_grade());
-		}
+		session.setS_category("");
 
 		model.addAttribute("list", mForumService.forumListService());
-		model.addAttribute("s_category", "");
-		model.addAttribute("user", user_map);
+		model.addAttribute("session", session);
 
 		return "main";
 	}
@@ -77,21 +66,10 @@ public class ForumController {
 	@RequestMapping("/main/{category}")
 	private String main_category(@ModelAttribute("session") SessionVO session, @PathVariable String category, Model model) throws Exception {
 
-		// login user info MAP
-		// 로그인 기록이 없으면(session이 비어있음) null값을 추가해주고,
-		// session에 정보가 있으면 값을 넣어줌.
-		Map<String, String> user_map = new HashMap<String, String>();
-
-		if (session != null) {
-			user_map.put("s_user_id", session.getS_user_id());
-			user_map.put("s_user_name", session.getS_user_name());
-			user_map.put("s_user_grade", session.getS_user_grade());
-			System.out.println(session.getS_user_grade());
-		}
-
+		session.setS_category(category);
+		
 		model.addAttribute("list", mForumService.forumCategoryListService(category));
-		model.addAttribute("s_category", category);
-		model.addAttribute("user", user_map);
+		model.addAttribute("session", session);
 		
 		return "main";
 	}
@@ -100,30 +78,18 @@ public class ForumController {
 	@RequestMapping("/main/search")
 	private String main_search(@ModelAttribute("session") SessionVO session, HttpServletRequest request, Model model) throws Exception {
 
-		// login user info MAP
-		// 로그인 기록이 없으면(session이 비어있음) null값을 추가해주고,
-		// session에 정보가 있으면 값을 넣어줌.
-		Map<String, String> user_map = new HashMap<String, String>();
-
-		if (session != null) {
-			user_map.put("s_user_id", session.getS_user_id());
-			user_map.put("s_user_name", session.getS_user_name());
-			user_map.put("s_user_grade", session.getS_user_grade());
-		}
-
 		String type = request.getParameter("type");
 		String search = request.getParameter("search");
-		String category = request.getParameter("category");
 
 		Map<String, String> search_map = new HashMap<String, String>();
-		search_map.put("s_category", category);
+		search_map.put("category", session.getS_category());
 		search_map.put("type", type);
 		search_map.put("search", search);
 
 		// ALL Category Search
 		// SELECTED Category Search
 		model.addAttribute("list", mForumService.forumSearchListService(search_map));
-		model.addAttribute("user", user_map);
+		model.addAttribute("session", session);
 		
 		return "main";
 	}
@@ -146,7 +112,7 @@ public class ForumController {
 		Map<String, Integer> info = mForumService.getInfoService(info_map);
 		info.put("num", num);
 
-		model.addAttribute("s_category", session.getS_category());
+		//model.addAttribute("s_category", session.getS_category());
 		model.addAttribute("topic", mForumService.forumTopicService(topic_id));
 		model.addAttribute("files", mFileService.fileDetailService(topic_id));
 		model.addAttribute("info", info);
@@ -160,7 +126,9 @@ public class ForumController {
 
 	// NEW 게시글 작성 화면
 	@RequestMapping("/new")
-	private String new_topic() throws Exception {
+	private String new_topic(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
+		
+		model.addAttribute("user", session);
 		return "new";
 	}
 
@@ -276,11 +244,29 @@ public class ForumController {
 
 	//////////////////////////////
 	//////////////////////////////
+	// 회원가입 (AJAX)
+	@RequestMapping("/register")
+	@ResponseBody
+	private int register(HttpServletRequest request) throws Exception {
+		
+		request.setCharacterEncoding("UTF-8");
+		//가입 정보를 MAP에 담아 service로 전달. => 추가
+		Map<String, String> reg_map = new HashMap<String, String>();
+		reg_map.put("user_id", request.getParameter("reg_id"));
+		reg_map.put("user_pw", request.getParameter("reg_pw"));
+		reg_map.put("user_name", request.getParameter("reg_name"));
+		reg_map.put("post", request.getParameter("reg_post"));
+		reg_map.put("address", request.getParameter("reg_addr"));
+		reg_map.put("extra_address", request.getParameter("reg_extraaddr"));
+		reg_map.put("detail_address", request.getParameter("reg_detailaddr"));
+		
+		return mUserService.userRegisterService(reg_map);
+	}
 	// 로그인 시도 - MAIN 게시판 목록 화면
 	@RequestMapping("/login")
 	// AJAX 비동기 처리를 위해 Annotation 추가.//=>return은 페이지가 아닌 data 반환값이 됨.
 	@ResponseBody
-	private UsersVO login(HttpServletRequest request, Model model, @ModelAttribute("session") SessionVO session)
+	private UsersVO login(HttpServletRequest request, @ModelAttribute("session") SessionVO session)
 			throws Exception {
 
 		request.setCharacterEncoding("UTF-8");

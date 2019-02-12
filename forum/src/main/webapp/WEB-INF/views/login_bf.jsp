@@ -119,6 +119,61 @@
 			}
 		});
 	});
+	
+	//REGISTER AJAX
+	$("#register_btn").click( function (e) {
+		//IMPORTANT!!!!
+		e.preventDefault();
+		var reg_name = $("#reg_name").val();
+		var reg_id = $("#reg_id").val();
+		var reg_pw = $("#reg_pw").val();
+		var reg_post = $("#reg_post").val();
+		var reg_addr = $("#reg_addr").val();
+		var reg_extraaddr = $("#reg_extraaddr").val();
+		var reg_detailaddr = $("#reg_detailaddr").val();
+		
+		//VALIDATION
+		if(reg_name =="")
+			$('#name_label').html("<span class='red-text'>이름을 입력해주세요</span>");
+		else
+			$('#name_label').html("이름");
+		/////
+		if(reg_id =="")
+			$('#id_label').html("<span class='red-text'>아이디를 입력해주세요.</span>");
+		else
+			$('#id_label').html("아이디");
+		/////
+		if(reg_pw =="")
+			$('#pw_label').html("<span class='red-text'>패스워드를 입력해주세요.</span>");
+		else
+			$('#pw_label').html("비밀번호");
+		/////
+		if(reg_post =="")
+			$('#addr_label').html("<span class='red-text'>주소를 정확히 입력해주세요.</span>");
+		else
+			$('#addr_label').html("주소");
+		///VALIDATION을 모두 통과할 때만 서버에 데이터 전송
+		if(reg_name !="" && reg_id !="" && reg_pw !="" && reg_post !="") {
+			$.ajax({
+				type : "POST",
+				url : "/register",
+				data : {"reg_name" : reg_name, "reg_id" : reg_id, "reg_pw" : reg_pw, "reg_post" : reg_post, "reg_addr" : reg_addr, "reg_extraaddr" : reg_extraaddr, "reg_detailaddr" : reg_detailaddr },
+				dataType: "json",
+				async : false,
+				error : function() {
+					//통신 실패. Query등록 실패 (이미 UNIQUE 아이디가 존재)
+					$('#id_label').html("<span class='red-text'>해당 아이디가 존재합니다.</span>");
+				},
+				success : function(data) {
+					if(data) {
+						alert("회원가입이 완료되었습니다.");
+						$("#reg_form")[0].reset();
+						$('#modalRegisterForm').modal('toggle');			
+					}
+				}
+			});
+		}
+	});
 
 	//ADDRESS DAUM API
 	// 우편번호 찾기 찾기 화면을 넣을 element

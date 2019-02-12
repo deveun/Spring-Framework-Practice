@@ -38,11 +38,11 @@
 <body>
 	<!-- (로그인 전/후 구별) Login Form / User Info -->
 	<c:choose>
-		<c:when test="${empty user.s_user_id}">
+		<c:when test="${empty session.s_user_id}">
 		
 			<jsp:include page="/WEB-INF/views/login_bf.jsp" flush="true" />
 		</c:when>
-		<c:when test="${!empty user.s_user_id}">
+		<c:when test="${!empty session.s_user_id}">
 			<jsp:include page="/WEB-INF/views/login_af.jsp" flush="true" />
 		</c:when>
 	</c:choose>
@@ -101,8 +101,6 @@
 			<tfoot>
 				<!-- Search -->
 				<form id="f1" name="f1" method="post" action="/main/search">
-					<input class="d-none" name="category" type="text" id="category"
-						value="${s_category}" />
 					<tr>
 						<td><select name="type"
 							class="form-control form-control-sm">
@@ -147,18 +145,18 @@
 		//list Click Event
 		function listClick(topic_id, num) {
 			<c:choose>
-				<c:when test="${empty user.s_user_id}">
+				<c:when test="${empty session.s_user_id}">
 					//alert("로그인 후 이용가능합니다.");
 					$('#modalLoginForm').modal('toggle');
 				</c:when>
-				<c:when test="${!empty user.s_user_id}">
+				<c:when test="${!empty session.s_user_id}">
 					location.href='/topic/'+ topic_id + '/' + num;
 				</c:when>
 			</c:choose>
 		}
 	
 		//nav item active
-		var s_category = '${s_category}';
+		var s_category = '${session.s_category}';
 		if (s_category!='') {
 			$('.navbar-nav').find('li.active').removeClass('active');
 			$('#'+s_category).parent('li').addClass('active');
@@ -166,11 +164,11 @@
 		//CREATE => check login state
 		$("#create_btn").click(function() {
 			<c:choose>
-			<c:when test="${empty user.s_user_id}">
+			<c:when test="${empty session.s_user_id}">
 				//alert("로그인 후 이용가능합니다.");
 				$('#modalLoginForm').modal('toggle');
 			</c:when>
-			<c:when test="${!empty user.s_user_id}">
+			<c:when test="${!empty session.s_user_id}">
 				location.href = "/new";
 			</c:when>
 			</c:choose>

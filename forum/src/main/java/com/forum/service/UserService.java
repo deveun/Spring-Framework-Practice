@@ -20,4 +20,9 @@ public class UserService {
 	public UsersVO userLoginService(Map<String, String> login_map) throws Exception {
 		return mUserMapper.userLogin(login_map);
 	}
+	
+	//회원가입
+	public int userRegisterService(Map<String, String> reg_map) throws Exception {
+		return mUserMapper.userRegister(reg_map); 
+	}
 }
