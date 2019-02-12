@@ -153,6 +153,7 @@ public class ForumController {
 		//// File Info
 		// real file name + extension
 		String file_FullName = files.getOriginalFilename();
+		System.out.println(file_FullName);
 		// real file name (without extension)
 		String file_BaseName = FilenameUtils.getBaseName(file_FullName);
 		// file Extension
@@ -174,9 +175,12 @@ public class ForumController {
 			save_FullName = fileUrl + str_date + "." + file_Extension;
 			saveFile = new File(save_FullName);
 		} while (saveFile.exists());
-
+		
+		// 첨부파일이 존재할 때만 저장소에 추가
+		if (!file_FullName.equals("")) {
 		saveFile.getParentFile().mkdirs();
 		files.transferTo(saveFile);
+		}
 
 		upload_file.setFile_name(file_BaseName);
 		upload_file.setFile_type(file_Extension);
