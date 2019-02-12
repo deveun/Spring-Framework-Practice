@@ -25,6 +25,8 @@
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
 	integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	crossorigin="anonymous">
+<!-- CKeditor ============================================== -->
+<script src="/ckeditor/ckeditor.js"></script>
 <!-- Jquery 3.2.1 ============================================= -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- DAUM address API ========================================= -->
@@ -35,50 +37,30 @@
 <!-- ========================================================== -->
 <!-- BODY  ==================================================== -->
 <body>
-<div class="container white p-1">
-		<!-- View Table -->
-		<table class="view_table table table-borderless table-sm mb-0">
-			<thead>
-				<tr>
-					<td colspan="3"><b>${topic.topic}</b></td>
-					<td class="text-right" width="20%">${topic.datetime}</td>
-				</tr>
-				<tr>
-					<td colspan="4">작성자: ${topic.user_id}</td>
-				</tr>
-				<tr>
-					<td width="10%" class="border-bottom border-dark d">첨부파일:</td>
-					<td colspan="3">
-						<c:forEach var="files" items="${files}">
-							<a class="file_info" href="${files.file_dir}" download="${files.file_name}.${files.file_type}">
-							<i class="far fa-save"></i> &nbsp;${files.file_name}.${files.file_type}
-							</a><br>
-						</c:forEach>
-					</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td colspan="4">${topic.detail}</td>
-				</tr>
-				<tr>
-					<td colspan="2" width="15%">
-						<button class="btn btn-sm btn-default p-2" id="next_btn">&lt</button>
-						<button class="btn btn-sm btn-default p-2" id="prev_btn">&gt</button>
-					</td>
-					<td colspan="2" class="text-right">
-						<button class="btn btn-sm btn-default" id="edit_btn" onClick="location.href='/edit/${topic.topic_id}'" hidden>수정</button>
-						<button class="btn btn-sm btn-default" id="delete_btn" onClick="location.href='/delete/${topic.topic_id}'" hidden>삭제</button>
-						<button class="btn btn-sm btn-default" onclick="location.href='/main/${session.s_category}'">글목록</button>
-					</td>
-				</tr>
-			</tbody>
+	
+	<!-- (로그인 전/후 구별) 로그인 전에는 접근 불가. 페이지 이동 / User Info -->
+	<c:choose>
+		<c:when test="${empty session.s_user_id}">
+			<script> alert('잘못된 접근입니다.');
+			location.href='/main';	</script>
+		</c:when>
+		<c:when test="${!empty session.s_user_id}">
+			<jsp:include page="/WEB-INF/views/login_af.jsp" flush="true" />
+		</c:when>
+	</c:choose>
+
+	<div class="container white py-3">
+		<table class="table table-sm col-6 mx-auto">
+			<tr><td >이름: </td><td>${user.user_name}</td>	</tr>
+			<tr><td>우편번호: </td><td>${user.post}</td></tr>
+			<tr><td>주소: </td><td>${user.address}</td></tr>
+			<tr><td>상세주소: </td><td>${user.detail_address}</td></tr>
 		</table>
-		<!-- /View Table -->
+		<div class="d-flex justify-content-center">
+			<button class="btn btn-default btn-sm m-2" onclick="location.href='/main'">확인</button>
+		</div>
 	</div>
-	<div class="container p-0 white-text text-right">
-		${info.num} / ${info.total_num}
-	</div>
+
 
 	<!-- ========================================================== -->
 	<!-- JavaScript CDN LIST ====================================== -->
@@ -95,32 +77,11 @@
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
 	<!-- /JavaScript CDN LIST ===================================== -->
-	<script>
-		
-		//check login state (button hidden)
-		if("${session.s_user_id}" != "" && "${session.s_user_id}" == "${topic.user_id}" ) {
-			$("#delete_btn").removeAttr("hidden");
-			$("#edit_btn").removeAttr("hidden");
-		}
-	
-		//button disability
-		if(${info.num} == 1)
-			$("#next_btn").prop('disabled',true);
-		if(${info.num} == ${info.total_num})
-			$("#prev_btn").prop('disabled',true);
-
-		//<<<
-		$("#next_btn").click( function () {
-			location.href="/topic/${info.next_id}/${info.num-1}";
-			return;
-		});
-
-		//>>>
-		$("#prev_btn").click( function () {
-			location.href="/topic/${info.prev_id}/${info.num+1}";
-			return;
-		});
-	
+	<script src="js/jquery.twbsPagination.min.js"></script>
+	<script type="text/javascript">
+		// Replace the <textarea id="editor1"> with a CKEditor
+		// instance, using default configuration.
+		CKEDITOR.replace('ckeditor');
 	</script>
 	<!-- ========================================================== -->
 </body>

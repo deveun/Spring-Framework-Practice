@@ -23,12 +23,12 @@
 <script>
 	//my info
 	$("#myinfo_btn").click( function () {
-		location.href = '';
+		location.href = '/myinfo';
 	});
 
 	//my post
 	$("#my_btn").click( function () {
-		location.href = '';
+		location.href = '/main/my';
 	});
 
 	$("#logout_btn").click( function () {

@@ -5,11 +5,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.forum.mapper.UserMapper">
 
-	<!-- 로그인 -->
+	<!-- Mybatis 동적 쿼리!!! IF STATEMENT -->
+	<!-- 로그인 or 정보 가져오기 (password == null) -->
 	<select id="userLogin" parameterType="Map" resultType="com.forum.domain.UsersVO">
 		SELECT * FROM users 
-		WHERE user_id = #{user_id}  
+		WHERE user_id = #{user_id}
+		<if test="user_pw != '' and user_pw != null">  
 		AND user_pw = password(#{user_pw})
+		</if>
 		LIMIT 1
 	</select>
 	
@@ -19,5 +22,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(user_id, user_pw, user_name, post, address, extra_address, detail_address)
 		 VALUES(#{user_id}, password(#{user_pw}), #{user_name}, #{post}, #{address}, #{extra_address}, #{detail_address})
 	</insert>
+	
+	<!-- 등급 값 변경 -->
+	<update id="setGrade" parameterType="Map">
+		UPDATE users SET user_grade = #{user_grade}
+		WHERE user_id = #{user_id}
+	</update>
 
 </mapper>

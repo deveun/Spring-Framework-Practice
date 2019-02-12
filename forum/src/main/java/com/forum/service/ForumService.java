@@ -10,12 +10,15 @@ import org.springframework.stereotype.Service;
 
 import com.forum.domain.ForumVO;
 import com.forum.mapper.ForumMapper;
+import com.forum.mapper.UserMapper;
 
 @Service("com.forum.service.ForumService")
 public class ForumService {
 
 	@Resource(name = "com.forum.mapper.ForumMapper")
 	ForumMapper mForumMapper;
+	@Resource(name = "com.forum.mapper.UserMapper")
+	UserMapper mUserMapper;
 
 	// 글 목록
 	public List<ForumVO> forumListService() throws Exception {
@@ -26,7 +29,12 @@ public class ForumService {
 	public List<ForumVO> forumCategoryListService(String category) throws Exception {
 		return mForumMapper.forumCategoryList(category);
 	}
-
+	
+	// 내 글 목록
+	public List<ForumVO> forumMyListService(String user_id) throws Exception {
+		return mForumMapper.forumMyList(user_id);
+	}
+	
 	// 검색 글 목록1 (ALL CATEGORY)
 	// 검색 글 목록2 (SELECTED CATEGORY)
 	public List<ForumVO> forumSearchListService(Map<String, String> search_map) throws Exception {
@@ -63,6 +71,29 @@ public class ForumService {
 	public int forumInsertService(ForumVO forum) throws Exception {
 		mForumMapper.forumInsert(forum);
 		return mForumMapper.forumNewid();
+	}
+	
+	// Grade 값 다시 계산
+	public String myGradeService(String user_id) throws Exception {
+		
+		//내 글의 갯수
+		int myCount = mForumMapper.myCount(user_id);
+		int myGrade = 0;
+		
+		//내 글 갯수에 따라서 다시 Grade계산
+		if(myCount < 5) myGrade = 1; 
+		else if(myCount < 10) myGrade = 2;
+		else if(myCount < 15) myGrade = 3;
+		else if(myCount < 20) myGrade = 4;
+		else myGrade = 5;
+		
+		Map<String, String> myGrade_map = new HashMap<String, String>();
+		myGrade_map.put("user_id",user_id);
+		myGrade_map.put("user_grade",Integer.toString(myGrade));
+		
+		//해당 유저의 Grade값 변경
+		mUserMapper.setGrade(myGrade_map); 
+		return Integer.toString(myGrade);
 	}
 
 	// 글 수정

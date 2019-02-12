@@ -39,7 +39,6 @@
 	<!-- (로그인 전/후 구별) Login Form / User Info -->
 	<c:choose>
 		<c:when test="${empty session.s_user_id}">
-		
 			<jsp:include page="/WEB-INF/views/login_bf.jsp" flush="true" />
 		</c:when>
 		<c:when test="${!empty session.s_user_id}">

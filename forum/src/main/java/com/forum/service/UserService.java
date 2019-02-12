@@ -16,13 +16,14 @@ public class UserService {
 	@Resource(name = "com.forum.mapper.UserMapper")
 	UserMapper mUserMapper;
 	
-	//로그인
-	public UsersVO userLoginService(Map<String, String> login_map) throws Exception {
-		return mUserMapper.userLogin(login_map);
+	//로그인 or 정보 가져오기 (password == null)
+	public UsersVO userLoginService(Map<String, String> idpw_map) throws Exception {
+		return mUserMapper.userLogin(idpw_map);
 	}
 	
 	//회원가입
 	public int userRegisterService(Map<String, String> reg_map) throws Exception {
 		return mUserMapper.userRegister(reg_map); 
 	}
+
 }

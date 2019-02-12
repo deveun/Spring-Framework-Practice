@@ -63,20 +63,29 @@ public class ForumController {
 	}
 
 	// CATEGORY 게시판 목록 화면
+	// My 게시글 목록 화면 ( Category == my )
 	@RequestMapping("/main/{category}")
-	private String main_category(@ModelAttribute("session") SessionVO session, @PathVariable String category, Model model) throws Exception {
+	private String main_category(@ModelAttribute("session") SessionVO session, @PathVariable String category,
+			Model model) throws Exception {
 
-		session.setS_category(category);
+		if (category.contentEquals("my")) {
+			session.setS_category("");
+			model.addAttribute("list", mForumService.forumMyListService(session.getS_user_id()));
+		}
+		else {
+			session.setS_category(category);
+			model.addAttribute("list", mForumService.forumCategoryListService(category));
+		}
 		
-		model.addAttribute("list", mForumService.forumCategoryListService(category));
 		model.addAttribute("session", session);
-		
+
 		return "main";
 	}
 
 	// SEARCH 게시판 목록 화면
 	@RequestMapping("/main/search")
-	private String main_search(@ModelAttribute("session") SessionVO session, HttpServletRequest request, Model model) throws Exception {
+	private String main_search(@ModelAttribute("session") SessionVO session, HttpServletRequest request, Model model)
+			throws Exception {
 
 		String type = request.getParameter("type");
 		String search = request.getParameter("search");
@@ -90,7 +99,7 @@ public class ForumController {
 		// SELECTED Category Search
 		model.addAttribute("list", mForumService.forumSearchListService(search_map));
 		model.addAttribute("session", session);
-		
+
 		return "main";
 	}
 
@@ -112,7 +121,7 @@ public class ForumController {
 		Map<String, Integer> info = mForumService.getInfoService(info_map);
 		info.put("num", num);
 
-		//model.addAttribute("s_category", session.getS_category());
+		// model.addAttribute("s_category", session.getS_category());
 		model.addAttribute("topic", mForumService.forumTopicService(topic_id));
 		model.addAttribute("files", mFileService.fileDetailService(topic_id));
 		model.addAttribute("info", info);
@@ -127,7 +136,7 @@ public class ForumController {
 	// NEW 게시글 작성 화면
 	@RequestMapping("/new")
 	private String new_topic(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
-		
+
 		model.addAttribute("user", session);
 		return "new";
 	}
@@ -135,7 +144,8 @@ public class ForumController {
 	// INSERT 게시글 추가 작업 (NEW VIEW에서 POST로 Parameter가져옴)
 	// MultipartFile Upload
 	@RequestMapping("/insert")
-	private String insert_topic(HttpServletRequest request, @RequestPart MultipartFile files) throws Exception {
+	private String insert_topic(@ModelAttribute("session") SessionVO session, HttpServletRequest request,
+			@RequestPart MultipartFile files) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
 		// Set forum vo
@@ -175,11 +185,11 @@ public class ForumController {
 			save_FullName = fileUrl + str_date + "." + file_Extension;
 			saveFile = new File(save_FullName);
 		} while (saveFile.exists());
-		
+
 		// 첨부파일이 존재할 때만 저장소에 추가
 		if (!file_FullName.equals("")) {
-		saveFile.getParentFile().mkdirs();
-		files.transferTo(saveFile);
+			saveFile.getParentFile().mkdirs();
+			files.transferTo(saveFile);
 		}
 
 		upload_file.setFile_name(file_BaseName);
@@ -191,6 +201,12 @@ public class ForumController {
 		if (!file_FullName.equals("")) {
 			mFileService.fileInsertService(upload_file);
 		}
+
+		// grade변경 (추가 / 삭제시)
+		// 해당 아이디의 글을 모두 확인하고, 그 갯수가 일정이상일 때 랭크값을 변경하고, 세션값 변경
+		String myGrade = mForumService.myGradeService(forum.getUser_id());
+		session.setS_user_grade(myGrade);
+		// System.out.print("세션값 변경. 글 추가." + myGrade);
 
 		return "redirect:/main";
 	}
@@ -220,7 +236,8 @@ public class ForumController {
 
 	// DELETE 게시글 삭제 작업 (GET으로 게시글 번호)
 	@RequestMapping("/delete/{topic_id}")
-	private String topicDelete(@PathVariable int topic_id, Model model) throws Exception {
+	private String topicDelete(@ModelAttribute("session") SessionVO session, @PathVariable int topic_id, Model model)
+			throws Exception {
 
 		// Directory 내의 파일 삭제
 		List<Upload_fileVO> upload_files = mFileService.fileDetailService(topic_id);
@@ -243,6 +260,13 @@ public class ForumController {
 		mFileService.fileDeleteService(topic_id);
 		// Forum DB에서 해당 topic_id값을 가진 정보 삭제
 		mForumService.forumDeleteService(topic_id);
+
+		// grade변경 (추가 / 삭제시)
+		// 해당 아이디의 글을 모두 확인하고, 그 갯수가 일정이상일 때 랭크값을 변경하고, 세션값 변경
+		String myGrade = mForumService.myGradeService(session.getS_user_id());
+		session.setS_user_grade(myGrade);
+		// System.out.print("세션값 변경. 글 삭제." + myGrade);
+
 		return "redirect:/main";
 	}
 
@@ -252,9 +276,9 @@ public class ForumController {
 	@RequestMapping("/register")
 	@ResponseBody
 	private int register(HttpServletRequest request) throws Exception {
-		
+
 		request.setCharacterEncoding("UTF-8");
-		//가입 정보를 MAP에 담아 service로 전달. => 추가
+		// 가입 정보를 MAP에 담아 service로 전달. => 추가
 		Map<String, String> reg_map = new HashMap<String, String>();
 		reg_map.put("user_id", request.getParameter("reg_id"));
 		reg_map.put("user_pw", request.getParameter("reg_pw"));
@@ -263,23 +287,23 @@ public class ForumController {
 		reg_map.put("address", request.getParameter("reg_addr"));
 		reg_map.put("extra_address", request.getParameter("reg_extraaddr"));
 		reg_map.put("detail_address", request.getParameter("reg_detailaddr"));
-		
+
 		return mUserService.userRegisterService(reg_map);
 	}
+
 	// 로그인 시도 - MAIN 게시판 목록 화면
 	@RequestMapping("/login")
 	// AJAX 비동기 처리를 위해 Annotation 추가.//=>return은 페이지가 아닌 data 반환값이 됨.
 	@ResponseBody
-	private UsersVO login(HttpServletRequest request, @ModelAttribute("session") SessionVO session)
-			throws Exception {
+	private UsersVO login(HttpServletRequest request, @ModelAttribute("session") SessionVO session) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
 		// login_id, login_pw를 Map으로 저장, 서버에서 확인.
-		Map<String, String> login_map = new HashMap<String, String>();
-		login_map.put("user_id", request.getParameter("login_id"));
-		login_map.put("user_pw", request.getParameter("login_pw"));
+		Map<String, String> idpw_map = new HashMap<String, String>();
+		idpw_map.put("user_id", request.getParameter("login_id"));
+		idpw_map.put("user_pw", request.getParameter("login_pw"));
 
-		UsersVO user = mUserService.userLoginService(login_map);
+		UsersVO user = mUserService.userLoginService(idpw_map);
 		if (user != null) {
 			session.setS_user_id(user.getUser_id());
 			session.setS_user_name(user.getUser_name());
@@ -298,5 +322,20 @@ public class ForumController {
 		// 세션에서 지운다.
 		sessionStatus.setComplete();
 		return "redirect:/main";
+	}
+	
+	// My info 내 정보
+	@RequestMapping("/myinfo")
+	private String myinfo(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
+		
+		// login_id, login_pw를 Map으로 저장, 서버에서 확인.
+		Map<String, String> idpw_map = new HashMap<String, String>();
+		idpw_map.put("user_id", session.getS_user_id());
+		idpw_map.put("user_pw", "");
+		
+		//Login Service를 활용!
+		model.addAttribute("user",mUserService.userLoginService(idpw_map));
+				
+		return "myinfo";
 	}
 }

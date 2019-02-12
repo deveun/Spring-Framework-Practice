@@ -17,6 +17,9 @@ public interface ForumMapper {
 	//카테고리 목록
 	public List<ForumVO> forumCategoryList(String category) throws Exception; 
 	
+	//내 글 목록
+	public List<ForumVO> forumMyList(String user_id) throws Exception;
+	
 	//검색 목록1 (ALL CATEGORY)
 	public List<ForumVO> forumSearchList1(Map<String, String> search_map) throws Exception;
 	
@@ -45,5 +48,8 @@ public interface ForumMapper {
 	
 	//글 삭제
 	public int forumDelete(int topic_id) throws Exception;
+	
+	//글 추가 or 삭제 시 내 게시글 갯수를 구해서 RANK 계산
+	public Integer myCount(String user_id) throws Exception;
 	
 }

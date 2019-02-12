@@ -15,6 +15,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM forum WHERE category = #{category} ORDER BY topic_id DESC
 	</select>
 	
+	<!-- 내 글 리스트 -->
+	<select id="forumMyList" parameterType="String" resultType="com.forum.domain.ForumVO">
+		SELECT * FROM forum WHERE user_id = #{user_id} ORDER BY topic_id DESC
+	</select>
+	
 	<!-- 검색 글 리스트1 ALL CATEGORY -->
 	<!-- Field 값으로 변수가 쓰일 때에는 $ / Parameter가 여러개여서 Map형태로 받음.-->
 	<select id="forumSearchList1" parameterType="Map" resultType="com.forum.domain.ForumVO">
@@ -83,5 +88,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="forumDelete" parameterType="int">
 	DELETE FROM forum WHERE topic_id = #{topic_id}
 	</delete>
+	
+	<!-- 내 글 갯수 -->
+	<select id="myCount" parameterType="String" resultType = "int">
+		SELECT COUNT(*) FROM forum
+		WHERE user_id = #{user_id}
+	</select>
 
 </mapper>
