@@ -36,7 +36,17 @@
 <!-- ========================================================== -->
 <!-- BODY  ==================================================== -->
 <body>
-
+	<!-- (로그인 전/후 구별) Login Form / User Info -->
+	<c:choose>
+		<c:when test="${empty user.s_user_id}">
+		
+			<jsp:include page="/WEB-INF/views/login_bf.jsp" flush="true" />
+		</c:when>
+		<c:when test="${!empty user.s_user_id}">
+			<jsp:include page="/WEB-INF/views/login_af.jsp" flush="true" />
+		</c:when>
+	</c:choose>
+	
 	<!-- NAVBAR -->
 	<div class="container mb-3 px-0">
 		<nav class="navbar navbar-expand-sm navbar-dark default-color">
@@ -61,6 +71,7 @@
 		</div>
 		</nav>
 	</div>
+	
 	<!-- BOARD -->
 	<div class="container white p-1">
 		<table class="main_table table table-sm table-hover text-center mb-0">
@@ -135,7 +146,15 @@
 	
 		//list Click Event
 		function listClick(topic_id, num) {
-			location.href='/topic/'+ topic_id + '/' + num;
+			<c:choose>
+				<c:when test="${empty user.s_user_id}">
+					//alert("로그인 후 이용가능합니다.");
+					$('#modalLoginForm').modal('toggle');
+				</c:when>
+				<c:when test="${!empty user.s_user_id}">
+					location.href='/topic/'+ topic_id + '/' + num;
+				</c:when>
+			</c:choose>
 		}
 	
 		//nav item active
@@ -146,11 +165,19 @@
 		}
 		//CREATE => check login state
 		$("#create_btn").click(function() {
-			location.href = "/new";
+			<c:choose>
+			<c:when test="${empty user.s_user_id}">
+				//alert("로그인 후 이용가능합니다.");
+				$('#modalLoginForm').modal('toggle');
+			</c:when>
+			<c:when test="${!empty user.s_user_id}">
+				location.href = "/new";
+			</c:when>
+			</c:choose>
 		});
 		
 		//PAGINATION
-		//pages total number (총 페이지 갯수)
+		//pages total number
 		var tp = Math.ceil(${fn:length(list)}/5);
 		//number of pages that page shows (화면에 보여주는 최대 페이지 숫자)
 		var vp = 5;
