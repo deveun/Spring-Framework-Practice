@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
@@ -37,9 +39,9 @@ import com.forum.service.UserService;
 @SessionAttributes("session")
 public class ForumController {
 
-	//Controller에서 사용할 Logger를 변수로 선언
-	private Logger logger = LoggerFactory.getLogger("Forum.Controller.Logger"); 
-	
+	// Controller에서 사용할 Logger를 변수로 선언
+	private Logger logger = LoggerFactory.getLogger("Forum.Controller.Logger");
+
 	// ModelAttribute에서 객체를 만들어 사용하기 위함.
 	@ModelAttribute("session")
 	public SessionVO setEmptuSession() {
@@ -57,13 +59,29 @@ public class ForumController {
 
 	// MAIN 게시판 목록 화면
 	@RequestMapping("/main")
-	private String main(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
+	private String main(@ModelAttribute("session") SessionVO session, HttpServletRequest request, Model model)
+			throws Exception {
 
 		session.setS_category("");
 
+		// 쿠키를 가져와서 저장된 값이 있다면, checkbox를 체크하고, 저장되어있는 id 값을 화면에서 보여줌
+		Cookie[] cookie = request.getCookies();
+		String name = null, value = null;
+		if (cookie != null && cookie.length != 0) {
+			for (int i = 0; i < cookie.length; ++i) {
+				name = cookie[i].getName();
+				if (name.trim().equals("rem_id")) {
+					value = cookie[i].getValue();
+					break;
+				}
+			}
+		}
+
+		model.addAttribute("rem_id", value);
 		model.addAttribute("list", mForumService.forumListService());
 		model.addAttribute("session", session);
 
+		logger.info("REM_ID:::" + value);
 		logger.info("Main View");
 		return "main";
 	}
@@ -71,18 +89,32 @@ public class ForumController {
 	// CATEGORY 게시판 목록 화면
 	// My 게시글 목록 화면 ( Category == my )
 	@RequestMapping("/main/{category}")
-	private String main_category(@ModelAttribute("session") SessionVO session, @PathVariable String category,
+	private String main_category(@ModelAttribute("session") SessionVO session, HttpServletRequest request, @PathVariable String category,
 			Model model) throws Exception {
 
 		if (category.contentEquals("my")) {
 			session.setS_category("");
 			model.addAttribute("list", mForumService.forumMyListService(session.getS_user_id()));
-		}
-		else {
+		} else {
 			session.setS_category(category);
 			model.addAttribute("list", mForumService.forumCategoryListService(category));
 		}
-		
+
+		// 쿠키를 가져와서 저장된 값이 있다면, checkbox를 체크하고, 저장되어있는 id 값을 화면에서 보여줌
+		Cookie[] cookie = request.getCookies();
+		String name = null, value = null;
+		if (cookie != null && cookie.length != 0) {
+			for (int i = 0; i < cookie.length; ++i) {
+				name = cookie[i].getName();
+				if (name.trim().equals("rem_id")) {
+					value = cookie[i].getValue();
+					break;
+				}
+			}
+		}
+
+		model.addAttribute("rem_id", value);
+
 		model.addAttribute("session", session);
 
 		return "main";
@@ -100,6 +132,21 @@ public class ForumController {
 		search_map.put("category", session.getS_category());
 		search_map.put("type", type);
 		search_map.put("search", search);
+
+		// 쿠키를 가져와서 저장된 값이 있다면, checkbox를 체크하고, 저장되어있는 id 값을 화면에서 보여줌
+		Cookie[] cookie = request.getCookies();
+		String name = null, value = null;
+		if (cookie != null && cookie.length != 0) {
+			for (int i = 0; i < cookie.length; ++i) {
+				name = cookie[i].getName();
+				if (name.trim().equals("rem_id")) {
+					value = cookie[i].getValue();
+					break;
+				}
+			}
+		}
+
+		model.addAttribute("rem_id", value);
 
 		// ALL Category Search
 		// SELECTED Category Search
@@ -144,7 +191,7 @@ public class ForumController {
 	private String new_topic(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
 
 		model.addAttribute("user", session);
-		
+
 		return "new";
 	}
 
@@ -302,9 +349,26 @@ public class ForumController {
 	@RequestMapping("/login")
 	// AJAX 비동기 처리를 위해 Annotation 추가.//=>return은 페이지가 아닌 data 반환값이 됨.
 	@ResponseBody
-	private UsersVO login(HttpServletRequest request, @ModelAttribute("session") SessionVO session) throws Exception {
+	private UsersVO login(HttpServletRequest request, HttpServletResponse response,
+			@ModelAttribute("session") SessionVO session) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
+		// 아이디 기억하기 check && text 존재 ==> Cookie값에 아이디 저장. (기간 : 1일)
+		// setPath 로 모든 경로에서 접근 가능하도록 설정.
+		if (request.getParameter("rem_id").equals("on") && !request.getParameter("login_id").equals("")) {
+			Cookie cookie = new Cookie("rem_id", request.getParameter("login_id"));
+			cookie.setMaxAge(24 * 60 * 60);
+			cookie.setPath("/");
+			response.addCookie(cookie);
+		}
+		// 아이디 기억하기 X ==> Cookie값 지우기.
+		else {
+			Cookie cookie = new Cookie("rem_id", null);
+			cookie.setMaxAge(0);
+			cookie.setPath("/");
+			response.addCookie(cookie);
+		}
+
 		// login_id, login_pw를 Map으로 저장, 서버에서 확인.
 		Map<String, String> idpw_map = new HashMap<String, String>();
 		idpw_map.put("user_id", request.getParameter("login_id"));
@@ -317,8 +381,7 @@ public class ForumController {
 			session.setS_user_grade(String.valueOf(user.getUser_grade()));
 		}
 
-		// System.out.println(user);
-
+		logger.info("REM_ID:::" + request.getParameter("rem_id"));
 		return user;
 	}
 
@@ -330,19 +393,19 @@ public class ForumController {
 		sessionStatus.setComplete();
 		return "redirect:/main";
 	}
-	
+
 	// My info 내 정보
 	@RequestMapping("/myinfo")
 	private String myinfo(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
-		
+
 		// login_id, login_pw를 Map으로 저장, 서버에서 확인.
 		Map<String, String> idpw_map = new HashMap<String, String>();
 		idpw_map.put("user_id", session.getS_user_id());
 		idpw_map.put("user_pw", "");
-		
-		//Login Service를 활용!
-		model.addAttribute("user",mUserService.userLoginService(idpw_map));
-				
+
+		// Login Service를 활용!
+		model.addAttribute("user", mUserService.userLoginService(idpw_map));
+
 		return "myinfo";
 	}
 }

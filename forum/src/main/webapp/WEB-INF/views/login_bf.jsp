@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <div class="wrap">
 	<div class="container px-0 text-right t17 d-flex flex-row mb-2">
@@ -26,12 +27,32 @@
 				<form id="login_form">
 					<div class="form-group">
 						<small class="form-text text-muted">아이디</small>
-						<input id="login_id" type="text" class="form-control" autocomplete="off" required>
+						<c:choose>
+							<c:when test="${empty rem_id or rem_id eq null}">
+								<input id="login_id" type="text" class="form-control" autocomplete="off" required>
+							</c:when>
+							<c:when test="${!empty rem_id and rem_id ne null}">
+								<input id="login_id" type="text" class="form-control" autocomplete="off" value = "${rem_id}" required>
+							</c:when>
+						</c:choose>
 						<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
 					</div>
 					<div class="form-group">
 						<small class="form-text text-muted">비밀번호</small>
 						<input id="login_pw" type="password" class="form-control" required>
+					</div>
+					<div class="form-check">
+						<c:choose>
+							<c:when test="${empty rem_id or rem_id eq null}">
+								<input type="checkbox" class="form-check-input" id="rem_id">
+							</c:when>
+							<c:when test="${!empty rem_id and rem_id ne null}">
+								<input type="checkbox" class="form-check-input" id="rem_id" checked>
+							</c:when>
+						</c:choose>
+						<label class="form-check-label" for="rem_id">
+						<small class="form-text text-muted">아이디 기억하기</small>
+						</label>
 					</div>
 			
 			</div>
@@ -99,11 +120,17 @@
 		e.preventDefault();
 		var login_id = $("#login_id").val();
 		var login_pw = $("#login_pw").val();
+		var rem_id = null;
+		//아이디 기억하기 check box
+		if($("#rem_id").is(":checked"))
+			rem_id = "on";
+		else
+			rem_id = "off";
 
 		$.ajax({
 			type : "POST",
 			url : "/login",
-			data : {"login_id" : login_id, "login_pw" : login_pw},
+			data : {"login_id" : login_id, "login_pw" : login_pw, "rem_id" : rem_id},
 			dataType: "json",
 			error : function() {
 				//SELECT쿼리 결과문이 NULL 값을 가질 때.

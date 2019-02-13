@@ -106,3 +106,3119 @@
 |---------|---------|--------|--------------|--------|------|--------------------|-----|
 ]
 [2019-02-13] [14:31:27.777] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [15:33:50.823] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [15:33:50.841] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [16:55:49.792] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 6564 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [16:55:49.792] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [16:55:50.558] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [16:55:50.571] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [16:55:50.571] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [16:55:50.587] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [16:55:50.587] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [16:55:50.587] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [16:55:51.618] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [16:55:51.734] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [16:55:51.734] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [16:55:51.734] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1926 ms]
+[2019-02-13] [16:55:52.046] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [16:55:52.250] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [16:55:52.250] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.739 seconds (JVM running for 3.217)]
+[2019-02-13] [16:56:04.463] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [16:56:04.463] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [16:56:04.467] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [16:56:04.678] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [16:56:04.689] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |4    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |7    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:56:04.690] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [16:56:40.378] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [16:56:40.391] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [16:56:40.435] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [16:56:40.440] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |4    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |7    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:56:40.440] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [16:56:47.300] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 223
+]
+[2019-02-13] [16:56:47.306] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id < '223' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [16:56:47.307] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|---------|
+]
+[2019-02-13] [16:56:47.308] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id > '223' 
+
+		LIMIT 1
+]
+[2019-02-13] [16:56:47.309] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [16:56:47.310] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [16:56:47.311] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [16:56:47.311] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE topic_id = 223
+]
+[2019-02-13] [16:56:47.313] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|-------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail |user_id |email |datetime            |view |
+|---------|---------|--------|-------|--------|------|--------------------|-----|
+|223      |news     |가나다라마바사 |       |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|-------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:56:47.313] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM upload_file WHERE topic_id = 223
+]
+[2019-02-13] [16:56:47.315] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|-------------------------------------------------------------------------------------------------|
+|file_id |topic_id |file_name |file_type |file_dir                                                                                         |
+|--------|---------|----------|----------|-------------------------------------------------------------------------------------------------|
+|179     |223      |샘플        |jpg       |C:\Users\KICPC\Desktop\eclipse-workspace\forum\src\main\webapp\/WEB-INF/uploads/190212162552.jpg |
+|--------|---------|----------|----------|-------------------------------------------------------------------------------------------------|
+]
+[2019-02-13] [16:57:31.183] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 224
+]
+[2019-02-13] [16:57:31.187] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id < '224' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [16:57:31.188] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|223      |
+|---------|
+]
+[2019-02-13] [16:57:31.188] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id > '224' 
+
+		LIMIT 1
+]
+[2019-02-13] [16:57:31.189] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|225      |
+|---------|
+]
+[2019-02-13] [16:57:31.190] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [16:57:31.190] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [16:57:31.191] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE topic_id = 224
+]
+[2019-02-13] [16:57:31.192] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|224      |news     |1     |<p>1</p>
+ |id1     |1     |2019-02-12 17:07:41 |5    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:57:31.193] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM upload_file WHERE topic_id = 224
+]
+[2019-02-13] [16:57:31.194] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [16:57:31.891] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [16:57:31.893] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:57:31.894] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [16:57:35.680] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor89.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [16:57:35.682] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:57:35.683] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [16:58:25.586] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [16:58:25.599] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [16:58:29.388] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 10008 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [16:58:29.391] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [16:58:30.261] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [16:58:30.274] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [16:58:30.274] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [16:58:30.274] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [16:58:30.274] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [16:58:30.274] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [16:58:31.316] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [16:58:31.448] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [16:58:31.451] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [16:58:31.452] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 2027 ms]
+[2019-02-13] [16:58:31.775] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [16:58:31.990] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [16:58:31.990] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 3.064 seconds (JVM running for 3.611)]
+[2019-02-13] [16:58:50.352] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [16:58:50.352] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [16:58:50.356] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [16:58:50.558] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [16:58:50.570] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [16:58:50.571] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:01:45.600] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:01:45.604] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:01:48.899] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 8532 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:01:48.901] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:01:49.620] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:01:49.637] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:01:49.637] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:01:49.643] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:01:49.643] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:01:49.643] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:01:50.669] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:01:50.783] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:01:50.787] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:01:50.787] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1860 ms]
+[2019-02-13] [17:01:51.077] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:01:51.295] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:01:51.298] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.662 seconds (JVM running for 3.092)]
+[2019-02-13] [17:01:56.580] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [17:01:56.581] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [17:01:56.586] [INFO] [FrameworkServlet.java:546] [Completed initialization in 5 ms]
+[2019-02-13] [17:01:56.785] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:01:56.796] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:01:56.797] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:06:56.551] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:06:56.568] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:07:00.095] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 2996 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:07:00.095] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:07:00.829] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:07:00.840] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:07:00.840] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:07:00.856] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:07:00.856] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:07:00.856] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:07:01.871] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:07:01.995] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:07:01.995] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:07:01.995] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1869 ms]
+[2019-02-13] [17:07:02.276] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:07:02.494] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:07:02.494] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.68 seconds (JVM running for 3.146)]
+[2019-02-13] [17:07:08.653] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [17:07:08.653] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [17:07:08.657] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [17:07:08.860] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:07:08.871] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:07:08.872] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:07:18.923] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:07:18.925] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:07:18.926] [INFO] [ForumController.java:321] [on]
+[2019-02-13] [17:07:18.968] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:07:18.974] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:07:18.975] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:07:33.294] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:07:33.297] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:07:33.297] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:07:39.518] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:07:39.519] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:07:39.520] [INFO] [ForumController.java:321] [on]
+[2019-02-13] [17:07:39.546] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:07:39.549] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:07:39.549] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:08:11.045] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:08:11.047] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:08:14.523] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 11988 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:08:14.523] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:08:15.344] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:08:15.361] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:08:15.362] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:08:15.367] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:08:15.367] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:08:15.367] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:08:16.404] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:08:16.533] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:08:16.536] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:08:16.537] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1983 ms]
+[2019-02-13] [17:08:16.880] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:08:17.108] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:08:17.111] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.869 seconds (JVM running for 3.316)]
+[2019-02-13] [17:08:17.144] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [17:08:17.145] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [17:08:17.149] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [17:08:17.351] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:08:17.362] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:08:17.363] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:08:26.696] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:08:26.699] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:08:26.699] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:08:26.699] [INFO] [ForumController.java:322] [on]
+[2019-02-13] [17:08:26.745] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:08:26.750] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:08:26.750] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:08:38.795] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:08:38.798] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:08:38.799] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:08:46.083] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:08:46.085] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:08:46.085] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:08:46.085] [INFO] [ForumController.java:322] [on]
+[2019-02-13] [17:08:46.098] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:08:46.101] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:08:46.102] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:13:10.383] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:13:10.396] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:15.176] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 5004 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:13:15.176] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:13:16.039] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:13:16.054] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:13:16.054] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:13:16.070] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:13:16.070] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:13:16.070] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:13:16.996] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 8120 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:13:16.996] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:13:17.113] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:13:17.277] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:13:17.292] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:13:17.292] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 2085 ms]
+[2019-02-13] [17:13:17.648] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:17.898] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:13:17.912] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:13:17.912] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 3.09 seconds (JVM running for 3.791)]
+[2019-02-13] [17:13:17.912] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:13:17.912] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:13:17.928] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:13:17.928] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:13:17.928] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:13:18.948] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:13:19.073] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:13:19.073] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:13:19.073] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 2046 ms]
+[2019-02-13] [17:13:19.374] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:19.577] [ERROR] [DirectJDKLog.java:175] [Failed to start component [Connector[HTTP/1.1-8081]]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1004)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.forum.ForumApplication.main(ForumApplication.java:26)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1001)
+	... 14 common frames omitted
+[2019-02-13] [17:13:19.593] [INFO] [DirectJDKLog.java:173] [Stopping service [Tomcat]]
+[2019-02-13] [17:13:19.608] [INFO] [ConditionEvaluationReportLoggingListener.java:142] [
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.]
+[2019-02-13] [17:13:19.608] [ERROR] [LoggingFailureAnalysisReporter.java:42] [
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8081 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
+]
+[2019-02-13] [17:13:19.608] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:23.318] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:13:23.320] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:27.807] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 1804 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:13:27.807] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:13:28.526] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:13:28.530] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:13:28.530] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:13:28.546] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:13:28.546] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:13:28.546] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:13:29.561] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:13:29.685] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:13:29.685] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:13:29.685] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1847 ms]
+[2019-02-13] [17:13:29.966] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:13:30.185] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:13:30.185] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.643 seconds (JVM running for 3.073)]
+[2019-02-13] [17:13:41.168] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [17:13:41.168] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [17:13:41.173] [INFO] [FrameworkServlet.java:546] [Completed initialization in 5 ms]
+[2019-02-13] [17:13:41.367] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:13:41.378] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:13:41.379] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:13:51.170] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:13:51.172] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:13:51.173] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:13:51.173] [INFO] [ForumController.java:322] [off]
+[2019-02-13] [17:13:51.222] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:13:51.228] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:13:51.230] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:13:58.069] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:13:58.072] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:13:58.072] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:14:04.982] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [17:14:04.985] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:14:04.985] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:14:04.985] [INFO] [ForumController.java:322] [on]
+[2019-02-13] [17:14:04.998] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:14:05.001] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |4    |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:14:05.002] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:15:45.854] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:45.859] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:45.860] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:45.861] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:45.862] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:45.862] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:45.863] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:45.864] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:45.865] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |5    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:45.866] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:45.866] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:46.895] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:46.897] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:46.898] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:46.898] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:46.899] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:46.900] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:46.901] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:46.902] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:46.903] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |6    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:46.904] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:46.905] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:47.089] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.094] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:47.094] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:47.096] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:47.097] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:47.098] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:47.103] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:47.103] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.104] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |7    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:47.105] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.106] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:47.318] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.321] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:47.322] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:47.323] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:47.324] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:47.325] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:47.326] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:47.327] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.329] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |8    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:47.330] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.331] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:47.522] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.526] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:47.528] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:47.530] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:47.531] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:47.532] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:47.533] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:47.533] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.535] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |9    |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:47.537] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.538] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:47.735] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.738] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:47.739] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:47.741] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:47.742] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:47.742] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:47.744] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:47.745] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.746] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |10   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:47.747] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.748] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:47.949] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.954] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:47.955] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:47.955] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:47.956] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:47.957] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:47.957] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:47.958] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.958] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |11   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:47.959] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:47.960] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:48.182] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.185] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:48.186] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:48.187] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:48.187] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:48.188] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:48.188] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:48.189] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.189] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |12   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:48.190] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.191] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:48.409] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.413] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:48.415] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:48.416] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:48.418] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:48.419] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:48.420] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:48.421] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.422] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |13   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:48.423] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.424] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:48.622] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.627] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:48.628] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:48.630] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:48.630] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:48.631] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:48.632] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:48.633] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.634] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |14   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:48.634] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.635] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:48.847] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. UPDATE forum SET view = view+1 WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.852] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id < '225' 
+
+		ORDER BY topic_id DESC LIMIT 1
+]
+[2019-02-13] [17:15:48.854] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|224      |
+|---------|
+]
+[2019-02-13] [17:15:48.855] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT topic_id FROM forum WHERE topic_id > '225' 
+
+		LIMIT 1
+]
+[2019-02-13] [17:15:48.856] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|topic_id |
+|---------|
+|226      |
+|---------|
+]
+[2019-02-13] [17:15:48.857] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT COUNT(*) FROM forum
+]
+[2019-02-13] [17:15:48.858] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|
+|count(*) |
+|---------|
+|8        |
+|---------|
+]
+[2019-02-13] [17:15:48.859] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.860] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic |detail     |user_id |email |datetime            |view |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+|225      |news     |2     |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |15   |
+|---------|---------|------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:48.862] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM upload_file WHERE topic_id = 225
+]
+[2019-02-13] [17:15:48.863] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|--------|---------|----------|----------|---------|
+|file_id |topic_id |file_name |file_type |file_dir |
+|--------|---------|----------|----------|---------|
+|--------|---------|----------|----------|---------|
+]
+[2019-02-13] [17:15:49.181] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:15:49.183] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:15:49.184] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:17:59.807] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:17:59.808] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:17:59.810] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:18:01.821] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:18:01.822] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:18:01.823] [INFO] [ForumController.java:67] [Main View]
+[2019-02-13] [17:18:07.977] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = 'dd'
+
+		AND user_pw = password('ddd')
+
+		LIMIT 1
+]
+[2019-02-13] [17:18:07.978] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [17:18:07.979] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:18:07.979] [INFO] [ForumController.java:322] [off]
+[2019-02-13] [17:18:21.073] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = 'dd'
+
+		AND user_pw = password('ddd')
+
+		LIMIT 1
+]
+[2019-02-13] [17:18:21.074] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [17:18:21.075] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:18:21.075] [INFO] [ForumController.java:322] [on]
+[2019-02-13] [17:25:07.225] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		LIMIT 1
+]
+[2019-02-13] [17:25:07.226] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [17:25:07.226] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:25:07.226] [INFO] [ForumController.java:322] [off]
+[2019-02-13] [17:25:16.773] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor88.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		LIMIT 1
+]
+[2019-02-13] [17:25:16.774] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [17:25:16.774] [INFO] [ForumController.java:321] [REM_ID!!!]
+[2019-02-13] [17:25:16.774] [INFO] [ForumController.java:322] [on]
+[2019-02-13] [17:59:08.514] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [17:59:08.517] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:59:11.935] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 13092 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [17:59:11.936] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [17:59:12.739] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [17:59:12.757] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [17:59:12.757] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [17:59:12.762] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [17:59:12.762] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [17:59:12.762] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [17:59:13.796] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [17:59:13.954] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [17:59:13.959] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [17:59:13.959] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1994 ms]
+[2019-02-13] [17:59:14.306] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [17:59:14.558] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [17:59:14.560] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.956 seconds (JVM running for 3.418)]
+[2019-02-13] [17:59:27.097] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [17:59:27.097] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [17:59:27.101] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [17:59:27.301] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:59:27.312] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:59:27.313] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [17:59:52.604] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		LIMIT 1
+]
+[2019-02-13] [17:59:52.608] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [17:59:52.608] [INFO] [ForumController.java:356] [REM_ID:::on]
+[2019-02-13] [17:59:52.652] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [17:59:52.658] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [17:59:52.659] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:01:52.581] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:01:52.584] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:01:52.584] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:04:37.687] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		AND user_pw = password('idddd')
+
+		LIMIT 1
+]
+[2019-02-13] [18:04:37.689] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:04:37.690] [INFO] [ForumController.java:356] [REM_ID:::off]
+[2019-02-13] [18:04:40.639] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		AND user_pw = password('idddd')
+
+		LIMIT 1
+]
+[2019-02-13] [18:04:40.640] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:04:40.641] [INFO] [ForumController.java:356] [REM_ID:::on]
+[2019-02-13] [18:04:47.147] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:04:47.152] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:04:47.153] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:05:10.872] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [18:05:10.874] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [18:05:10.874] [INFO] [ForumController.java:356] [REM_ID:::on]
+[2019-02-13] [18:05:10.884] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:05:10.886] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:05:10.887] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:05:19.352] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:05:19.354] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:05:19.355] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:05:20.426] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:05:20.429] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:05:20.430] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:05:26.675] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('qwe')
+
+		LIMIT 1
+]
+[2019-02-13] [18:05:26.676] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:05:26.677] [INFO] [ForumController.java:356] [REM_ID:::off]
+[2019-02-13] [18:05:36.365] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id1'
+
+		AND user_pw = password('id1')
+
+		LIMIT 1
+]
+[2019-02-13] [18:05:36.366] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address          |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+|50         |id1     |*01785BBB277956A280FEBA326E468494D2A64CF1 |김김        |1          |46031 |부산 기장군 장안읍 판곡길 7 |              |가가             |
+|-----------|--------|------------------------------------------|----------|-----------|------|-----------------|--------------|---------------|
+]
+[2019-02-13] [18:05:36.367] [INFO] [ForumController.java:356] [REM_ID:::off]
+[2019-02-13] [18:05:36.378] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:05:36.383] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:05:36.384] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:06:16.579] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:06:16.580] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:06:16.581] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:06:17.804] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:06:17.807] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:06:17.808] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:06:20.243] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		LIMIT 1
+]
+[2019-02-13] [18:06:20.244] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:06:20.245] [INFO] [ForumController.java:356] [REM_ID:::off]
+[2019-02-13] [18:08:53.856] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:08:53.858] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:08:57.174] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 10092 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:08:57.176] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:08:57.898] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:08:57.913] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:08:57.913] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:08:57.918] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:08:57.918] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:08:57.919] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:08:58.955] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:08:59.078] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:08:59.082] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:08:59.082] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1879 ms]
+[2019-02-13] [18:08:59.389] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:08:59.617] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:08:59.620] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.709 seconds (JVM running for 3.153)]
+[2019-02-13] [18:09:04.917] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [18:09:04.917] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [18:09:04.922] [INFO] [FrameworkServlet.java:546] [Completed initialization in 5 ms]
+[2019-02-13] [18:09:05.131] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:09:05.142] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:09:05.143] [INFO] [ForumController.java:87] [Main View]
+[2019-02-13] [18:10:11.362] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:10:11.364] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:10:14.650] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 512 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:10:14.652] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:10:15.395] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:10:15.411] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:10:15.412] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:10:15.417] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:10:15.417] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:10:15.417] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:10:16.459] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:10:16.589] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:10:16.594] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:10:16.595] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1917 ms]
+[2019-02-13] [18:10:16.918] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:10:17.163] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:10:17.166] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.782 seconds (JVM running for 3.209)]
+[2019-02-13] [18:10:51.578] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:10:51.580] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:10:54.871] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 1588 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:10:54.873] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:10:55.625] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:10:55.641] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:10:55.641] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:10:55.646] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:10:55.646] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:10:55.646] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:10:56.670] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:10:56.788] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:10:56.791] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:10:56.792] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1893 ms]
+[2019-02-13] [18:10:57.088] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:10:57.308] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:10:57.310] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.71 seconds (JVM running for 3.137)]
+[2019-02-13] [18:11:02.189] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [18:11:02.189] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [18:11:02.193] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [18:11:02.393] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:11:02.404] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:11:02.406] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:11:02.406] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:13:30.835] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:13:30.838] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:13:34.105] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 11652 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:13:34.107] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:13:34.834] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:13:34.850] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:13:34.851] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:13:34.856] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:13:34.856] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:13:34.857] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:13:35.892] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:13:36.008] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:13:36.012] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:13:36.012] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1879 ms]
+[2019-02-13] [18:13:36.303] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:13:36.521] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:13:36.523] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.684 seconds (JVM running for 3.11)]
+[2019-02-13] [18:13:43.358] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [18:13:43.358] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [18:13:43.362] [INFO] [FrameworkServlet.java:546] [Completed initialization in 3 ms]
+[2019-02-13] [18:13:43.589] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:13:43.601] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:13:43.602] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:13:43.603] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:04.186] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		AND user_pw = password('i33')
+
+		LIMIT 1
+]
+[2019-02-13] [18:14:04.188] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:14:04.188] [INFO] [ForumController.java:358] [REM_ID:::on]
+[2019-02-13] [18:14:07.008] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:07.016] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:07.017] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:14:07.017] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:07.886] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:07.889] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:07.890] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:14:07.890] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:12.350] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		AND user_pw = password('id2')
+
+		LIMIT 1
+]
+[2019-02-13] [18:14:12.352] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address         |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|48         |id2     |*6BA08BDD669B27CB263F9730FF8CAC21247D9EC2 |최최최       |1          |06267 |서울 강남구 강남대로 238 | (도곡동)        |가나다            |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+]
+[2019-02-13] [18:14:12.352] [INFO] [ForumController.java:358] [REM_ID:::off]
+[2019-02-13] [18:14:12.398] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:12.401] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:12.401] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:14:12.402] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:14.176] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:14.178] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:14.178] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:14:14.178] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:19.945] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		AND user_pw = password('id2')
+
+		LIMIT 1
+]
+[2019-02-13] [18:14:19.946] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address         |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|48         |id2     |*6BA08BDD669B27CB263F9730FF8CAC21247D9EC2 |최최최       |1          |06267 |서울 강남구 강남대로 238 | (도곡동)        |가나다            |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+]
+[2019-02-13] [18:14:19.947] [INFO] [ForumController.java:358] [REM_ID:::on]
+[2019-02-13] [18:14:19.959] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:19.962] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:19.962] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:14:19.962] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:14:22.265] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:14:22.267] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:14:22.267] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:14:22.267] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:12.061] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:15:12.062] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:15:15.322] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 10668 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:15:15.325] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:15:16.045] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:15:16.061] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:15:16.061] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:15:16.066] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:15:16.066] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:15:16.067] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:15:17.094] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:15:17.210] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:15:17.214] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:15:17.215] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1860 ms]
+[2019-02-13] [18:15:17.505] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:15:17.718] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:15:17.720] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.67 seconds (JVM running for 3.098)]
+[2019-02-13] [18:15:22.353] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [18:15:22.353] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [18:15:22.357] [INFO] [FrameworkServlet.java:546] [Completed initialization in 3 ms]
+[2019-02-13] [18:15:22.563] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:22.575] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:22.576] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:15:22.576] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:26.862] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:26.868] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:26.871] [INFO] [ForumController.java:87] [REM_ID:::id2]
+[2019-02-13] [18:15:26.871] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:28.842] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		LIMIT 1
+]
+[2019-02-13] [18:15:28.844] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address         |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|48         |id2     |*6BA08BDD669B27CB263F9730FF8CAC21247D9EC2 |최최최       |1          |06267 |서울 강남구 강남대로 238 | (도곡동)        |가나다            |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+]
+[2019-02-13] [18:15:28.844] [INFO] [ForumController.java:358] [REM_ID:::off]
+[2019-02-13] [18:15:28.893] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:28.897] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:28.898] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:15:28.898] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:31.174] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:31.177] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:31.178] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:15:31.178] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:35.456] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id3'
+
+		AND user_pw = password('asd')
+
+		LIMIT 1
+]
+[2019-02-13] [18:15:35.458] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:15:35.458] [INFO] [ForumController.java:358] [REM_ID:::on]
+[2019-02-13] [18:15:37.790] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'music' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:37.793] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail      |user_id |email |datetime          |view |
+|---------|---------|------|------------|--------|------|------------------|-----|
+|234      |music    |ttt   |<p>tt</p>
+ |id2     |tt    |19/02/12 17:17:10 |5    |
+|---------|---------|------|------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:15:38.598] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'news' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:38.600] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail     |user_id |email |datetime            |view |
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+|235      |news     |tt      |<p>t</p>
+ |id2     |tt    |19/02/12 17:17:14   |5    |
+|226      |news     |3       |<p>3</p>
+ |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+ |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |           |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:43.110] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'asd'
+
+		AND user_pw = password('asd')
+
+		LIMIT 1
+]
+[2019-02-13] [18:15:43.111] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:15:43.111] [INFO] [ForumController.java:358] [REM_ID:::on]
+[2019-02-13] [18:15:48.674] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:48.675] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:15:51.356] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:51.358] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:51.358] [INFO] [ForumController.java:87] [REM_ID:::asd]
+[2019-02-13] [18:15:51.358] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:55.378] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'asd'
+
+		LIMIT 1
+]
+[2019-02-13] [18:15:55.379] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:15:55.380] [INFO] [ForumController.java:358] [REM_ID:::off]
+[2019-02-13] [18:15:58.024] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:58.028] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:58.029] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:15:58.029] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:15:58.808] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:15:58.810] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:15:58.810] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:15:58.810] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:16:02.655] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id3'
+
+		AND user_pw = password('id3')
+
+		LIMIT 1
+]
+[2019-02-13] [18:16:02.656] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+|49         |id3     |*D20160432F5D84F2AC8B20DE62FCF6142EBB3FE6 |등급테스트     |2          |     |        |              |아아             |
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:16:02.656] [INFO] [ForumController.java:358] [REM_ID:::off]
+[2019-02-13] [18:16:02.674] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:16:02.675] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:16:02.676] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:16:02.676] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:16:04.641] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:16:04.642] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:16:04.642] [INFO] [ForumController.java:87] [REM_ID:::null]
+[2019-02-13] [18:16:04.643] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:16:09.533] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM users 
+		WHERE user_id = 'id3'
+
+		AND user_pw = password('id3')
+
+		LIMIT 1
+]
+[2019-02-13] [18:16:09.534] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+|49         |id3     |*D20160432F5D84F2AC8B20DE62FCF6142EBB3FE6 |등급테스트     |2          |     |        |              |아아             |
+|-----------|--------|------------------------------------------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:16:09.535] [INFO] [ForumController.java:358] [REM_ID:::on]
+[2019-02-13] [18:16:09.546] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:16:09.549] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:16:09.549] [INFO] [ForumController.java:87] [REM_ID:::id3]
+[2019-02-13] [18:16:09.549] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:16:11.547] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:16:11.549] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:16:11.549] [INFO] [ForumController.java:87] [REM_ID:::id3]
+[2019-02-13] [18:16:11.549] [INFO] [ForumController.java:88] [Main View]
+[2019-02-13] [18:17:29.906] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:17:29.908] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:17:33.171] [INFO] [StartupInfoLogger.java:50] [Starting ForumApplication on DESKTOP-25NLS72 with PID 8760 (C:\Users\KICPC\Desktop\eclipse-workspace\forum\target\classes started by KICPC in C:\Users\KICPC\Desktop\eclipse-workspace\forum)]
+[2019-02-13] [18:17:33.173] [INFO] [SpringApplication.java:675] [No active profile set, falling back to default profiles: default]
+[2019-02-13] [18:17:33.918] [INFO] [TomcatWebServer.java:90] [Tomcat initialized with port(s): 8081 (http)]
+[2019-02-13] [18:17:33.934] [INFO] [DirectJDKLog.java:173] [Starting service [Tomcat]]
+[2019-02-13] [18:17:33.934] [INFO] [DirectJDKLog.java:173] [Starting Servlet engine: [Apache Tomcat/9.0.14]]
+[2019-02-13] [18:17:33.939] [INFO] [DirectJDKLog.java:173] [Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].]
+[2019-02-13] [18:17:33.939] [INFO] [DirectJDKLog.java:173] [APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].]
+[2019-02-13] [18:17:33.939] [INFO] [DirectJDKLog.java:173] [APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]]
+[2019-02-13] [18:17:34.966] [INFO] [DirectJDKLog.java:173] [OpenSSL successfully initialized [OpenSSL 1.0.2q  20 Nov 2018]]
+[2019-02-13] [18:17:35.079] [INFO] [DirectJDKLog.java:173] [At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.]
+[2019-02-13] [18:17:35.083] [INFO] [DirectJDKLog.java:173] [Initializing Spring embedded WebApplicationContext]
+[2019-02-13] [18:17:35.084] [INFO] [ServletWebServerApplicationContext.java:296] [Root WebApplicationContext: initialization completed in 1884 ms]
+[2019-02-13] [18:17:35.376] [INFO] [ExecutorConfigurationSupport.java:171] [Initializing ExecutorService 'applicationTaskExecutor']
+[2019-02-13] [18:17:35.592] [INFO] [TomcatWebServer.java:204] [Tomcat started on port(s): 8081 (http) with context path '']
+[2019-02-13] [18:17:35.594] [INFO] [StartupInfoLogger.java:59] [Started ForumApplication in 2.694 seconds (JVM running for 3.123)]
+[2019-02-13] [18:17:38.846] [INFO] [DirectJDKLog.java:173] [Initializing Spring DispatcherServlet 'dispatcherServlet']
+[2019-02-13] [18:17:38.846] [INFO] [FrameworkServlet.java:524] [Initializing Servlet 'dispatcherServlet']
+[2019-02-13] [18:17:38.850] [INFO] [FrameworkServlet.java:546] [Completed initialization in 4 ms]
+[2019-02-13] [18:17:39.053] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:17:39.064] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:17:39.065] [INFO] [ForumController.java:84] [REM_ID:::id3]
+[2019-02-13] [18:17:39.065] [INFO] [ForumController.java:85] [Main View]
+[2019-02-13] [18:17:43.008] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:17:43.011] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:17:47.357] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id3'
+
+		AND user_pw = password('asd')
+
+		LIMIT 1
+]
+[2019-02-13] [18:17:47.359] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:17:47.360] [INFO] [ForumController.java:384] [REM_ID:::off]
+[2019-02-13] [18:17:49.378] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'news' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:17:49.382] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail     |user_id |email |datetime            |view |
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+|235      |news     |tt      |<p>t</p>
+ |id2     |tt    |19/02/12 17:17:14   |5    |
+|226      |news     |3       |<p>3</p>
+ |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+ |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+ |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |           |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|-----------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:17:52.287] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = ''
+
+		LIMIT 1
+]
+[2019-02-13] [18:17:52.288] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:17:52.289] [INFO] [ForumController.java:384] [REM_ID:::on]
+[2019-02-13] [18:17:53.824] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:17:53.827] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:17:53.828] [INFO] [ForumController.java:84] [REM_ID:::null]
+[2019-02-13] [18:17:53.828] [INFO] [ForumController.java:85] [Main View]
+[2019-02-13] [18:17:57.931] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = '123'
+
+		LIMIT 1
+]
+[2019-02-13] [18:17:57.932] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|account_id |user_id |user_pw |user_name |user_grade |post |address |extra_address |detail_address |
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+|-----------|--------|--------|----------|-----------|-----|--------|--------------|---------------|
+]
+[2019-02-13] [18:17:57.932] [INFO] [ForumController.java:384] [REM_ID:::on]
+[2019-02-13] [18:18:00.152] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:00.154] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:18:05.851] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		AND user_pw = password('id2')
+
+		LIMIT 1
+]
+[2019-02-13] [18:18:05.853] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address         |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|48         |id2     |*6BA08BDD669B27CB263F9730FF8CAC21247D9EC2 |최최최       |1          |06267 |서울 강남구 강남대로 238 | (도곡동)        |가나다            |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+]
+[2019-02-13] [18:18:05.853] [INFO] [ForumController.java:384] [REM_ID:::on]
+[2019-02-13] [18:18:05.898] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:05.899] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:18:07.034] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM users 
+		WHERE user_id = 'id2'
+
+		LIMIT 1
+]
+[2019-02-13] [18:18:07.036] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|account_id |user_id |user_pw                                   |user_name |user_grade |post  |address         |extra_address |detail_address |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+|48         |id2     |*6BA08BDD669B27CB263F9730FF8CAC21247D9EC2 |최최최       |1          |06267 |서울 강남구 강남대로 238 | (도곡동)        |가나다            |
+|-----------|--------|------------------------------------------|----------|-----------|------|----------------|--------------|---------------|
+]
+[2019-02-13] [18:18:08.682] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:08.684] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:18:08.685] [INFO] [ForumController.java:84] [REM_ID:::id2]
+[2019-02-13] [18:18:08.685] [INFO] [ForumController.java:85] [Main View]
+[2019-02-13] [18:18:09.459] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:09.460] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:18:10.468] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum WHERE user_id = 'id2' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:10.470] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|-------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail       |user_id |email |datetime            |view |
+|---------|---------|--------|-------------|--------|------|--------------------|-----|
+|236      |book     |asd     |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+   |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+  |id2     |tt    |19/02/12 17:17:10   |5    |
+|223      |news     |가나다라마바사 |             |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|-------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:18:11.214] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:11.216] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:18:11.216] [INFO] [ForumController.java:84] [REM_ID:::id2]
+[2019-02-13] [18:18:11.216] [INFO] [ForumController.java:85] [Main View]
+[2019-02-13] [18:18:12.686] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.NativeMethodAccessorImpl.invoke0(null:-2)
+10. SELECT * FROM forum ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:12.688] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|topic_id |category |topic   |detail        |user_id |email |datetime            |view |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+|238      |movie    |asd     |<p>aasd</p>
+ |id1     |a     |2019-02-13 13:57:57 |3    |
+|236      |book     |asd     |<p>asd</p>
+  |id2     |asd   |19/02/12 17:17:24   |5    |
+|235      |news     |tt      |<p>t</p>
+    |id2     |tt    |19/02/12 17:17:14   |5    |
+|234      |music    |ttt     |<p>tt</p>
+   |id2     |tt    |19/02/12 17:17:10   |5    |
+|226      |news     |3       |<p>3</p>
+    |id1     |3     |2019-02-12 17:07:49 |5    |
+|225      |news     |2       |<p>2</p>
+    |id1     |2     |2019-02-12 17:07:45 |15   |
+|224      |news     |1       |<p>1</p>
+    |id1     |1     |2019-02-12 17:07:41 |5    |
+|223      |news     |가나다라마바사 |              |id2     |가가가   |2019-02-12 16:25:52 |8    |
+|---------|---------|--------|--------------|--------|------|--------------------|-----|
+]
+[2019-02-13] [18:18:12.690] [INFO] [ForumController.java:84] [REM_ID:::id2]
+[2019-02-13] [18:18:12.690] [INFO] [ForumController.java:85] [Main View]
+[2019-02-13] [18:18:13.402] [DEBUG] [Slf4jSpyLogDelegator.java:223] [ sun.reflect.GeneratedMethodAccessor90.invoke(null:-1)
+10. SELECT * FROM forum WHERE category = 'book' ORDER BY topic_id DESC
+]
+[2019-02-13] [18:18:13.404] [INFO] [Slf4jSpyLogDelegator.java:610] [
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|topic_id |category |topic |detail       |user_id |email |datetime          |view |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+|236      |book     |asd   |<p>asd</p>
+ |id2     |asd   |19/02/12 17:17:24 |5    |
+|---------|---------|------|-------------|--------|------|------------------|-----|
+]
+[2019-02-13] [18:18:21.552] [INFO] [SpringApplicationAdminMXBeanRegistrar.java:164] [Application shutdown requested.]
+[2019-02-13] [18:18:21.554] [INFO] [ExecutorConfigurationSupport.java:208] [Shutting down ExecutorService 'applicationTaskExecutor']
