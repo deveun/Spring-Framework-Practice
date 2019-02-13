@@ -9,6 +9,7 @@ import com.forum.domain.ForumVO;
 
 @Repository("com.forum.mapper.ForumMapper")
 public interface ForumMapper {
+	
 	public int forumCount() throws Exception;
 	
 	//목록
@@ -20,11 +21,8 @@ public interface ForumMapper {
 	//내 글 목록
 	public List<ForumVO> forumMyList(String user_id) throws Exception;
 	
-	//검색 목록1 (ALL CATEGORY)
-	public List<ForumVO> forumSearchList1(Map<String, String> search_map) throws Exception;
-	
-	//검색 목록2 (SELECTED CATEGORY)
-	public List<ForumVO> forumSearchList2(Map<String, String> search_map) throws Exception;
+	//검색 목록 (ALL CATEGORY or SELECTED CATEGORY)
+	public List<ForumVO> forumSearchList(Map<String, String> search_map) throws Exception;
 	
 	//상세
 	public ForumVO forumTopic(int topic_id) throws Exception;

@@ -11,6 +11,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FilenameUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +37,9 @@ import com.forum.service.UserService;
 @SessionAttributes("session")
 public class ForumController {
 
+	//Controller에서 사용할 Logger를 변수로 선언
+	private Logger logger = LoggerFactory.getLogger("Forum.Controller.Logger"); 
+	
 	// ModelAttribute에서 객체를 만들어 사용하기 위함.
 	@ModelAttribute("session")
 	public SessionVO setEmptuSession() {
@@ -59,6 +64,7 @@ public class ForumController {
 		model.addAttribute("list", mForumService.forumListService());
 		model.addAttribute("session", session);
 
+		logger.info("Main View");
 		return "main";
 	}
 
@@ -138,6 +144,7 @@ public class ForumController {
 	private String new_topic(@ModelAttribute("session") SessionVO session, Model model) throws Exception {
 
 		model.addAttribute("user", session);
+		
 		return "new";
 	}
 

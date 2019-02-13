@@ -35,14 +35,9 @@ public class ForumService {
 		return mForumMapper.forumMyList(user_id);
 	}
 	
-	// 검색 글 목록1 (ALL CATEGORY)
-	// 검색 글 목록2 (SELECTED CATEGORY)
+	// 검색 글 목록 (ALL CATEGORY or SELECTED CATEGORY)
 	public List<ForumVO> forumSearchListService(Map<String, String> search_map) throws Exception {
-		if(search_map.get("category").equals("")) {
-			return mForumMapper.forumSearchList1(search_map);
-		}
-		else
-			return mForumMapper.forumSearchList2(search_map);
+		return mForumMapper.forumSearchList(search_map);
 	}
 
 	// 글 상세

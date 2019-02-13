@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    
+    <!-- 로그를 저장할 파일 경로 -->
+    <property name="LOG_DIR" value="./logs" />
+    <!-- 로그 파일 이름 -->
+    <property name="FILE_NAME" value="logback" /> 
+ 
+    <!-- FILE Appender(로그를 파일로 저장) -->
+    <!-- RollingFileAppender == 여러개의 파일을 순회하면서 로그를 찍는 방법  -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/${FILE_NAME}.log</file>
+        <!-- 일자별 로그파일 저장 (하루가 지나가면 파일을 분할함.) -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${FILE_NAME}_%d{yyyyMMdd}.log</fileNamePattern>
+            <!-- 일자별 로그파일 저장 기간 설정 -->
+            <maxHistory>30</maxHistory> 
+        </rollingPolicy>
+        <encoder>
+        		<!-- 로그 형식: 날짜  시간  로그레벨   로그인클래스.java 몇번째줄   로그메세지 -->
+            <pattern>[%d{yyyy-MM-dd}] [%d{HH:mm:ss.SSS}] [%p] [%F:%L] [%m]%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- STDOUT Appender(로그를 콘솔창에 띄워줌) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!-- 로그 형식: 날짜  시간  로그레벨   로그인클래스.java 몇번째줄   로그메세지 -->
+            <pattern>[%d{yyyy-MM-dd}] [%d{HH:mm:ss.SSS}] [%p] [%F:%L] [%m]%n</pattern>
+        </layout>
+    </appender>
+    
+    
+    <!--  
+		jdbc.sqlonly    : Logs only SQL (SQL)
+		jdbc.sqltiming  : Logs the SQL, post-execution, including timing execution statistics (SQL + 실행 시간)
+		jdbc.audit      : Logs ALL JDBC calls except for ResultSets (ResultSets 제외 모든 JDBC 호출정보. 권장 x)
+		jdbc.resultset  : all calls to ResultSet objects are logged (모든 호출정보. 방대한 양의 로그)
+		jdbc.connection : Logs connection open and close events (열려있는 모든 번호와 연결 수립 및 해제 이벤트를 기록. 연결 문제를 찾는데 유용.)
+		-->
+
+    <!-- Sql내용을 log로 출력 (log4jdbc.log4j2) -->
+    <logger name="jdbc" level="OFF"/>
+    
+    <!-- SQL문 로그 출력 -->
+  	<logger name="jdbc.sqlonly" level="DEBUG" additivity="false">>
+    	<appender-ref ref="FILE"/>
+    	<appender-ref ref="STDOUT" />
+  	</logger>  
+  
+  	<!-- 작업 DB TABLE 로그 출력 -->
+  	<logger name="jdbc.resultsettable" level="DEBUG" additivity="false">> 
+    	<appender-ref ref="FILE"/>
+    	<appender-ref ref="STDOUT" />
+  	</logger>
+    
+    <!-- 로그 레벨 : ERROR < WARN < INFO < DEBUG < TRACE -->
+    <!-- 루트로 설정된 레벨과 하위레벨의 로그를 출력한다 (파일/콘솔) -->
+    <root level="INFO">
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+ 
+</configuration>

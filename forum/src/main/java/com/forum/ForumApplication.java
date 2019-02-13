@@ -1,5 +1,10 @@
 //REFERENCE (SPRING BOARD EXAMPLE) *************
 //https://private.tistory.com/54?category=753861
+//LOGBACK 사용
+//https://jeong-pro.tistory.com/154
+//https://aljjabaegi.tistory.com/413
+//log4jdbc.log4j2로 SQL 쿼리문 로깅
+//https://devofhwb.tistory.com/81
 
 package com.forum;
 
