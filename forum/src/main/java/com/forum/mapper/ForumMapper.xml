@@ -6,8 +6,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.forum.mapper.ForumMapper">
 	
 	<!-- 전체 글 리스트 -->
-	<select id="forumList" resultType="com.forum.domain.ForumVO">
-		SELECT * FROM forum ORDER BY topic_id DESC
+	<select id="forumList" parameterType="Map" resultType="com.forum.domain.ForumVO">
+		SELECT * FROM forum 
+			<choose>
+				<when test="mode == 'category'">
+					WHERE category = #{value}
+				</when>
+				<when test="mode == 'my'">
+					WHERE user_id = #{value}
+				</when>
+			</choose>
+		ORDER BY topic_id DESC
 	</select>
 	
 	<!-- 카테고리 글 리스트 -->
@@ -21,14 +30,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- Mybatis 동적 쿼리!!! IF STATEMENT -->
-	<!-- 검색 글 리스트 ALL CATEGORY or SELECTED CATEGORY-->
+	<!-- 검색 글 리스트 ALL CATEGORY or SELECTED CATEGORY or MY -->
 	<!-- Field 값으로 변수가 쓰일 때에는 $ / Parameter가 여러개여서 Map형태로 받음.-->
 	<select id="forumSearchList" parameterType="Map" resultType="com.forum.domain.ForumVO">
 	<bind name="search" value="'%'+search+'%'"/>
 		SELECT * FROM forum WHERE ${type} LIKE #{search} 
-		<if test="category != '' and category != null">
-		AND category = #{category}
-		</if>
+		<choose>
+			<when test="category == 'my'">
+				AND user_id = #{user_id}
+			</when>
+			<when test="category != '' and category != null">
+				AND category = #{category}
+			</when>
+		</choose>
 		ORDER BY topic_id DESC
 	</select>
 	
@@ -45,26 +59,55 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- Mybatis 동적 쿼리!!! IF STATEMENT -->
 	<!--(선택 카테고리별 구분) 이전 글 ID -->
 	<select id="getPrev" parameterType="Map" resultType="int">
-		SELECT topic_id FROM forum WHERE topic_id &lt; #{topic_id} 
-		<if test="category != '' and category != null">
-		AND category = #{category}
+		SELECT topic_id FROM forum WHERE topic_id &lt; #{topic_id}
+		<choose>
+			<when test="category == 'my'">
+				AND user_id = #{user_id}
+			</when>
+			<when test="category != '' and category != null">
+				AND category = #{category}
+			</when>
+		</choose>
+		<if test="search != null and search != '' ">
+			<bind name="search" value="'%'+search+'%'"/> 
+			AND ${type} LIKE #{search}
 		</if>
 		ORDER BY topic_id DESC LIMIT 1
 	</select>
 	<!--(선택 카테고리별 구분) 다음 글 ID -->
 	<select id="getNext" parameterType="Map" resultType="int">
 		SELECT topic_id FROM forum WHERE topic_id &gt; #{topic_id} 
-		<if test="category != '' and category != null">
-		AND category = #{category}
+		<choose>
+			<when test="category == 'my'">
+				AND user_id = #{user_id}
+			</when>
+			<when test="category != '' and category != null">
+				AND category = #{category}
+			</when>
+		</choose>
+		<if test="search != null and search != '' ">
+			<bind name="search" value="'%'+search+'%'"/> 
+			AND ${type} LIKE #{search}
 		</if>
 		LIMIT 1
 	</select>
 	<!--(선택 카테고리별 구분) 전체 글 갯수 -->
 	<select id="getTotal" parameterType="Map" resultType = "int">
 		SELECT COUNT(*) FROM forum
-		<if test="category != '' and category != null">
-		WHERE category = #{category}
-		</if>
+		<where>
+			<choose>
+				<when test="category == 'my'">
+					user_id = #{user_id}
+				</when>
+				<when test="category != '' and category != null">
+					category = #{category}
+				</when>
+			</choose>
+			<if test="search != null and search != '' ">
+				<bind name="search" value="'%'+search+'%'"/> 
+				AND ${type} LIKE #{search}
+			</if>
+		</where>
 	</select>
 	
 	<!-- 새로운 글 추가 -->

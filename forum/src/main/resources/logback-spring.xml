@@ -51,10 +51,12 @@
   	</logger>  
   
   	<!-- 작업 DB TABLE 로그 출력 -->
+  	<!-- 
   	<logger name="jdbc.resultsettable" level="DEBUG" additivity="false">> 
     	<appender-ref ref="FILE"/>
     	<appender-ref ref="STDOUT" />
   	</logger>
+  	-->
     
     <!-- 로그 레벨 : ERROR < WARN < INFO < DEBUG < TRACE -->
     <!-- 루트로 설정된 레벨과 하위레벨의 로그를 출력한다 (파일/콘솔) -->

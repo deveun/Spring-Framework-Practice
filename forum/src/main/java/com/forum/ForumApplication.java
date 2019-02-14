@@ -5,6 +5,8 @@
 //https://aljjabaegi.tistory.com/413
 //log4jdbc.log4j2로 SQL 쿼리문 로깅
 //https://devofhwb.tistory.com/81
+//Cookie 사용
+//https://medium.com/@aaaalpooo/spring-framework-spring-boot-%EC%BF%A0%ED%82%A4-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%A0%9C%EA%B1%B0-5aab0bf1ab67
 
 package com.forum;
 

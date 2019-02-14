@@ -10,18 +10,10 @@ import com.forum.domain.ForumVO;
 @Repository("com.forum.mapper.ForumMapper")
 public interface ForumMapper {
 	
-	public int forumCount() throws Exception;
+	//목록 //카테고리 목록 //내 글 목록
+	public List<ForumVO> forumList(Map<String, String> list_map) throws Exception;
 	
-	//목록
-	public List<ForumVO> forumList() throws Exception;
-	
-	//카테고리 목록
-	public List<ForumVO> forumCategoryList(String category) throws Exception; 
-	
-	//내 글 목록
-	public List<ForumVO> forumMyList(String user_id) throws Exception;
-	
-	//검색 목록 (ALL CATEGORY or SELECTED CATEGORY)
+	//검색 목록 (ALL CATEGORY or SELECTED CATEGORY or MY)
 	public List<ForumVO> forumSearchList(Map<String, String> search_map) throws Exception;
 	
 	//상세

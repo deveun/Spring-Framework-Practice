@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="userLogin" parameterType="Map" resultType="com.forum.domain.UsersVO">
 		SELECT * FROM users 
 		WHERE user_id = #{user_id}
-		<if test="user_pw != '' and user_pw != null">  
+		<if test="user_pw != null">  
 		AND user_pw = password(#{user_pw})
 		</if>
 		LIMIT 1

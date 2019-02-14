@@ -20,22 +20,12 @@ public class ForumService {
 	@Resource(name = "com.forum.mapper.UserMapper")
 	UserMapper mUserMapper;
 
-	// 글 목록
-	public List<ForumVO> forumListService() throws Exception {
-		return mForumMapper.forumList();
-	}
-
-	// 카테고리 글 목록
-	public List<ForumVO> forumCategoryListService(String category) throws Exception {
-		return mForumMapper.forumCategoryList(category);
+	// 글 목록 // 카테고리 글 목록 // 내 글 목록
+	public List<ForumVO> forumListService(Map<String, String> list_map) throws Exception {
+		return mForumMapper.forumList(list_map);
 	}
 	
-	// 내 글 목록
-	public List<ForumVO> forumMyListService(String user_id) throws Exception {
-		return mForumMapper.forumMyList(user_id);
-	}
-	
-	// 검색 글 목록 (ALL CATEGORY or SELECTED CATEGORY)
+	// 검색 글 목록 (ALL CATEGORY or SELECTED CATEGORY or MY)
 	public List<ForumVO> forumSearchListService(Map<String, String> search_map) throws Exception {
 		return mForumMapper.forumSearchList(search_map);
 	}

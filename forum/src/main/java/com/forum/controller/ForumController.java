@@ -63,6 +63,7 @@ public class ForumController {
 			throws Exception {
 
 		session.setS_category("");
+		session.setS_search("");
 
 		// 쿠키를 가져와서 저장된 값이 있다면, checkbox를 체크하고, 저장되어있는 id 값을 화면에서 보여줌
 		Cookie[] cookie = request.getCookies();
@@ -76,9 +77,14 @@ public class ForumController {
 				}
 			}
 		}
+		
+		//mode에 따라서 전체 / 카테고리 / 내 게시글 목록 보기
+		Map<String, String> list_map = new HashMap<String, String>();
+		list_map.put("mode", "all");
+		list_map.put("value", null);
 
 		model.addAttribute("rem_id", value);
-		model.addAttribute("list", mForumService.forumListService());
+		model.addAttribute("list", mForumService.forumListService(list_map));
 		model.addAttribute("session", session);
 
 		logger.info("REM_ID:::" + value);
@@ -91,13 +97,31 @@ public class ForumController {
 	@RequestMapping("/main/{category}")
 	private String main_category(@ModelAttribute("session") SessionVO session, HttpServletRequest request, @PathVariable String category,
 			Model model) throws Exception {
-
+		
+		Map<String, String> list_map = new HashMap<String, String>();
+		session.setS_search("");
+		
 		if (category.contentEquals("my")) {
-			session.setS_category("");
-			model.addAttribute("list", mForumService.forumMyListService(session.getS_user_id()));
-		} else {
+			
+			//로그인이 되어 있지 않을 때 접근 불가
+			if (session.getS_user_id() == null ) {
+				logger.info("잘못된 접근 (mypage)");
+				return "redirect:/main";
+			}
+			//mode에 따라서 전체 / 카테고리 / 내 게시글 목록 보기
+			
+			list_map.put("mode", "my");
+			list_map.put("value", session.getS_user_id());
+			
+			session.setS_category("my");
+			model.addAttribute("list", mForumService.forumListService(list_map));
+		} else {	
+			//mode에 따라서 전체 / 카테고리 / 내 게시글 목록 보기
+			list_map.put("mode", "category");
+			list_map.put("value", category);
+			
 			session.setS_category(category);
-			model.addAttribute("list", mForumService.forumCategoryListService(category));
+			model.addAttribute("list", mForumService.forumListService(list_map));
 		}
 
 		// 쿠키를 가져와서 저장된 값이 있다면, checkbox를 체크하고, 저장되어있는 id 값을 화면에서 보여줌
@@ -127,9 +151,13 @@ public class ForumController {
 
 		String type = request.getParameter("type");
 		String search = request.getParameter("search");
-
+		
+		session.setS_type(type);
+		session.setS_search(search);
+		
 		Map<String, String> search_map = new HashMap<String, String>();
 		search_map.put("category", session.getS_category());
+		search_map.put("user_id", session.getS_user_id());
 		search_map.put("type", type);
 		search_map.put("search", search);
 
@@ -161,11 +189,14 @@ public class ForumController {
 	private String topicDetail(@PathVariable int topic_id, @PathVariable int num,
 			@ModelAttribute("session") SessionVO session, Model model) throws Exception {
 
-		// (예정) cookie값이 존재하지 않는 경우에만 조회수를 증가시킬 수 있음.
+		// 조회수를 증가.
 		mForumService.addCountService(topic_id);
 
 		// server 작업수행으로 info (MAP) 을 가져오기 위함. === category, topic_id
 		Map<String, String> info_map = new HashMap<String, String>();
+		info_map.put("type", session.getS_type());
+		info_map.put("search", session.getS_search());
+		info_map.put("user_id", session.getS_user_id());
 		info_map.put("category", session.getS_category());
 		info_map.put("topic_id", Integer.toString(topic_id));
 
@@ -174,14 +205,9 @@ public class ForumController {
 		Map<String, Integer> info = mForumService.getInfoService(info_map);
 		info.put("num", num);
 
-		// model.addAttribute("s_category", session.getS_category());
 		model.addAttribute("topic", mForumService.forumTopicService(topic_id));
 		model.addAttribute("files", mFileService.fileDetailService(topic_id));
 		model.addAttribute("info", info);
-
-		// System.out.println(info.get("prev_id"));
-		// System.out.println(info.get("next_id"));
-		// System.out.println(info.get("total_num"));
 
 		return "topic";
 	}
@@ -401,7 +427,7 @@ public class ForumController {
 		// login_id, login_pw를 Map으로 저장, 서버에서 확인.
 		Map<String, String> idpw_map = new HashMap<String, String>();
 		idpw_map.put("user_id", session.getS_user_id());
-		idpw_map.put("user_pw", "");
+		idpw_map.put("user_pw", null);
 
 		// Login Service를 활용!
 		model.addAttribute("user", mUserService.userLoginService(idpw_map));

@@ -5,6 +5,8 @@ public class SessionVO {
 	private String s_user_id;
 	private String s_user_name;
 	private String s_user_grade;
+	private String s_type;
+	private String s_search;
 	
 	public String getS_category() {
 		return s_category;
@@ -29,5 +31,17 @@ public class SessionVO {
 	}
 	public void setS_user_grade(String s_user_grade) {
 		this.s_user_grade = s_user_grade;
+	}
+	public String getS_type() {
+		return s_type;
+	}
+	public void setS_type(String s_type) {
+		this.s_type = s_type;
+	}
+	public String getS_search() {
+		return s_search;
+	}
+	public void setS_search(String s_search) {
+		this.s_search = s_search;
 	}
 }
